@@ -130,10 +130,8 @@
     hyprland.enable = true; # window manager
   };
 
-  # security
-  security = {
-    polkit.enable = true;
-  };
+  # polkit
+  security.polkit.enable = true;
 
   # xdg portals
   xdg.portal = {
