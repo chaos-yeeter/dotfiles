@@ -109,6 +109,8 @@
       networkmanagerapplet # network applet
 
       zoxide # fuzzy search cd
+
+      gitui # git ui
     ];
   };
 
