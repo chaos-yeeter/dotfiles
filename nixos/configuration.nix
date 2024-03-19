@@ -111,6 +111,8 @@
       zoxide # fuzzy search cd
 
       gitui # git ui
+
+      gnumake # for make
     ];
   };
 
