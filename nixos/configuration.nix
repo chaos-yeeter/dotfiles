@@ -113,6 +113,8 @@
       gitui # git ui
 
       gnumake # for make
+
+      xdg-utils # mime-type support
     ];
   };
 
