@@ -115,6 +115,8 @@
       gnumake # for make
 
       xdg-utils # mime-type support
+
+      playerctl # play/pause/next/etc through mpris
     ];
   };
 
