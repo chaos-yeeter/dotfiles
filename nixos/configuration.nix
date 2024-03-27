@@ -116,6 +116,9 @@
             xdg-utils # mime-type support
 
             playerctl # play/pause/next/etc through mpris
+
+            swaylock-effects # lockscreen
+            swayidle
         ];
     };
 
@@ -134,6 +137,7 @@
     programs = {
         hyprland.enable = true; # window manager
     };
+    security.pam.services.swaylock = {};
 
     # polkit
     security.polkit.enable = true;
