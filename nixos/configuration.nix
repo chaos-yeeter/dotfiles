@@ -93,6 +93,8 @@
 
             rofi-wayland # app launcher
 
+            pavucontrol # ui for audio devices
+
             gnome.nautilus # file manager
             gnome.dconf-editor # gsettings editor
             gnome.adwaita-icon-theme # icon theme
@@ -106,6 +108,8 @@
             gcc
 
             networkmanagerapplet # network applet
+
+            bluez # bluetooth manager
 
             zoxide # fuzzy search cd
 
@@ -126,8 +130,6 @@
     environment.systemPackages = with pkgs; [
         neovim # editor
         tmux # terminal multiplexer
-        pavucontrol # ui for audio devices
-        bluez # bluetooth manager
     ];
 
     # set neovim as default editor
