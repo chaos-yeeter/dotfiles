@@ -125,6 +125,8 @@
             swayidle
 
             ripgrep # fuzzy finder for neovim
+
+            starship # prompt
         ];
     };
 
