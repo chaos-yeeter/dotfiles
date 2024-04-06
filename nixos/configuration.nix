@@ -127,6 +127,8 @@
             ripgrep # fuzzy finder for neovim
 
             starship # prompt
+
+            hatch # build frontend for python
         ];
     };
 
