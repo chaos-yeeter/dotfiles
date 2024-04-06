@@ -123,6 +123,8 @@
 
             swaylock-effects # lockscreen
             swayidle
+
+            ripgrep # fuzzy finder for neovim
         ];
     };
 
