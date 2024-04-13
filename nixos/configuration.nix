@@ -135,6 +135,8 @@
             pyright # LSP for python
 
             taplo # LSP toolkit for toml
+
+            lua-language-server # LSP for lua
         ];
     };
 
