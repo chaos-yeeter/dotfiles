@@ -98,6 +98,7 @@
             gnome.nautilus # file manager
             gnome.dconf-editor # gsettings editor
             gnome.adwaita-icon-theme # icon theme
+            gnome.eog # image viewer
 
             polkit # privileged access manager
             polkit_gnome # dialogues for authentication
