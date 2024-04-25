@@ -150,10 +150,8 @@
     # set neovim as default editor
     environment.variables.EDITOR = "nvim";
 
-    # programs
-    programs = {
-        hyprland.enable = true; # window manager
-    };
+    # hyprland
+    programs.hyprland.enable = true; # window manager
     security.pam.services.swaylock = {};
 
     # polkit
