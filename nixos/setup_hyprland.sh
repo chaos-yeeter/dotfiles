@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# start polkit agent
+lxqt-policykit-agent &
+
 # start notification daemon
 dunst &
 

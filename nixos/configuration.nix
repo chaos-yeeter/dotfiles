@@ -101,7 +101,7 @@
             gnome.eog # image viewer
 
             polkit # privileged access manager
-            polkit_gnome # dialogues for authentication
+            lxqt.lxqt-policykit # dialogues for authentication
 
             brightnessctl # brightness controls
 
@@ -188,14 +188,6 @@
 
     # systemd services
     systemd.user.services = {
-        # start polkit_gnome on startup. This service is needed to access other partitions using polkit authentication manager
-        custom-polkit-authentication-agent = {
-            description = "custom-polkit-authentication-agent";
-            wantedBy = [ "graphical-session.target" ];
-            after = [ "graphical-session.target" ];
-            serviceConfig.ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        };
-
         # service for media controls from bluetooth devices
         custom-mpris-proxy = {
             description = "custom-mpris-proxy";
