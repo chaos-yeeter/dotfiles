@@ -138,6 +138,8 @@
             taplo # LSP toolkit for toml
 
             lua-language-server # LSP for lua
+
+            wl-clipboard # clipboard support
         ];
     };
 
