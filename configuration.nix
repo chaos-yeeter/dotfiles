@@ -139,6 +139,8 @@
 
             lua-language-server # LSP for lua
 
+            nil # language server for nix
+
             wl-clipboard # clipboard support
         ];
     };
