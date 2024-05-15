@@ -141,6 +141,9 @@
 
             nil # language server for nix
 
+            nodePackages.typescript-language-server # LSP for typescript
+            vscode-langservers-extracted # LSP for html, css, eslint
+
             wl-clipboard # clipboard support
         ];
     };
