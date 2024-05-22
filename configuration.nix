@@ -93,12 +93,13 @@
 
             rofi-wayland # app launcher
 
-            pavucontrol # ui for audio devices
+            easyeffects # ui for audio devices
 
             gnome.nautilus # file manager
             gnome.dconf-editor # gsettings editor
             gnome.adwaita-icon-theme # icon theme
             gnome.eog # image viewer
+            gnome.gnome-calculator # calculator
 
             polkit # privileged access manager
             lxqt.lxqt-policykit # dialogues for authentication

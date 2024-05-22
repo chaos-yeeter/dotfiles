@@ -12,5 +12,8 @@ blueman-applet &
 # start network applet
 nm-applet --show-indicator &
 
+# start easy effects service
+easyeffects --gapplication-service &
+
 # start top bar
 waybar &
