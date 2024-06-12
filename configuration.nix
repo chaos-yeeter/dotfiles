@@ -147,6 +147,8 @@
             vscode-langservers-extracted # LSP for html, css, eslint
 
             wl-clipboard # clipboard support
+
+            fzf # fuzzy search
         ];
     };
 
