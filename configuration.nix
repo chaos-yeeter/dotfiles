@@ -130,8 +130,6 @@
 
             starship # prompt
 
-            hatch # build frontend for python
-
             ruff # linter/formatter for python
             ruff-lsp
             pyright # LSP for python
