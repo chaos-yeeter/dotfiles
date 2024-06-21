@@ -76,7 +76,7 @@
     users.users.frankenstein = {
         isNormalUser = true;
         description = "frankenstein";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
         packages = with pkgs; [
             firefox # browser
 
@@ -174,6 +174,15 @@
             pkgs.xdg-desktop-portal-gtk
             pkgs.xdg-desktop-portal-hyprland
         ];
+    };
+
+    # docker setup
+    virtualisation.docker = {
+        enable = true;
+        rootless = {
+            enable = true;
+            setSocketVariable = true;
+        };
     };
 
     # sound
