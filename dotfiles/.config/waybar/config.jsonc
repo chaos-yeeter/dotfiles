@@ -1,0 +1,51 @@
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["idle_inhibitor", "wireplumber", "battery", "tray"],
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "",
+            "active": ""
+        },
+        "persistent_workspaces": {
+            "*": 4
+        }
+    },
+
+
+    "idle_inhibitor": {
+        "format": " {icon} ",
+        "format-icons": {
+            "activated": "󰒳",
+            "deactivated": "󰒲"
+        }
+    },
+
+    "wireplumber": {
+        "on-click": "easyeffects",
+        "format": "{volume}% {icon}",
+        "format-muted": "Mute ",
+        "format-icons": ["", "", ""]
+    },
+
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": {
+            "discharging": ["󰁺", "󰁺", "󰁼", "󰁽", "󰁾", "󰁾", "󰂀", "󰂀", "󰂀", "󰁹"],
+            "charging": ["󰂄"],
+            "full": ["󰁹"]
+        },
+        "interval": 1,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        }
+    },
+
+    "tray": {
+        "spacing": 5
+    }
+}
