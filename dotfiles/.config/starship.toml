@@ -1,0 +1,21 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+[character]
+success_symbol = '[->](bold green)'
+error_symbol = '[](bold red)'
+vimcmd_symbol = "[](bold blue)"
+
+[directory]
+truncation_symbol = '.../'
+
+[battery]
+disabled = true
+
+[cmd_duration]
+min_time = 500
+
+[git_metrics]
+disabled = false
