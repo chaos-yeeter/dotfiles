@@ -147,6 +147,8 @@
             wl-clipboard # clipboard support
 
             fzf # fuzzy search
+
+            stow # symlinking dotfiles
         ];
     };
 

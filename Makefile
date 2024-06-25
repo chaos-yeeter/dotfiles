@@ -16,3 +16,6 @@ nixos-switch:
 nixos-test:
 	make --no-print-directory nixos-hardware-file-check
 	sudo nixos-rebuild test --flake ${ROOT_DIR}
+
+stow:
+	stow dotfiles -t ~ -vv
