@@ -1,0 +1,10 @@
+[gpg]
+	format = ssh
+[user]
+	name = chaos-yeeter
+	email = kayasthamihir11@gmail.com
+	signingkey = /home/frankenstein/.ssh/github.pub
+[commit]
+	gpgSign = true
+[gpg "ssh"]
+	allowedSignersFile = /home/frankenstein/.ssh/allowed_signers
