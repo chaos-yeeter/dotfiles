@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-a3c8d6, ... }:
 
 {
     imports = [
@@ -162,7 +162,10 @@
     environment.variables.EDITOR = "nvim";
 
     # hyprland
-    programs.hyprland.enable = true; # window manager
+    programs.hyprland = {
+        enable = true;
+        package = pkgs-a3c8d6.hyprland;
+    };
     security.pam.services.swaylock = {};
 
     # polkit
@@ -174,7 +177,6 @@
         extraPortals = [
             pkgs.xdg-desktop-portal
             pkgs.xdg-desktop-portal-gtk
-            pkgs.xdg-desktop-portal-hyprland
         ];
     };
 
