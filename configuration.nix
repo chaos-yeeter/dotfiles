@@ -63,9 +63,9 @@
     # services
     services = {
         # layout in x11
-        xserver = {
+        xserver.xkb = {
             layout = "us";
-            xkbVariant = "";
+            variant = "";
         };
 
         # gvfs for nautilus
