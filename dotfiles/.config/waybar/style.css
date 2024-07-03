@@ -1,87 +1,86 @@
 * {
-    border: none;
-    font-family: FiraCode;
-    min-height: 0;
-    border-radius: 20;
+  border: none;
+  font-family: FiraCode;
+  min-height: 0;
+  border-radius: 20;
 }
 
 window#waybar {
-    background: transparent;
-    color: white;
+  background: transparent;
+  color: white;
 }
 
 tooltip {
-    /* background: rgba(43, 48, 59, 1); */
-    background: rgba(43, 48, 59, 0.5);
-    border: 1px solid rgba(100, 114, 125, 0.5);
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
 }
 
 tooltip label {
-    color: white;
-    padding: 0px;
+  color: white;
+  padding: 0px;
 }
 
 #workspaces {
-    background: rgba(43, 48, 59, 0.5);
+  background: rgba(43, 48, 59, 0.5);
 }
 
 #workspaces button {
-    color: white;
+  color: white;
 }
 
 #workspaces button.focused {
-    background: rgb(100, 114, 125);
+  background: rgb(100, 114, 125);
 }
 
 .modules-center {
-    background: rgba(43, 48, 59, 0.5);
+  background: rgba(43, 48, 59, 0.5);
 }
 
 #clock {
-    padding: 5px 10px;
+  padding: 5px 10px;
 }
 
 .modules-right {
-    background: rgba(43, 48, 59, 0.5);
+  background: rgba(43, 48, 59, 0.5);
 }
 
 #idle_inhibitor {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 #idle_inhibitor.activated {
-    /* This is done to fix offset between activated and deactivated icons */
-    margin-top: 1px;
+  /* This is done to fix offset between activated and deactivated icons */
+  margin-top: 1px;
 }
 
 #battery {
-    padding: 0 10px;
+  padding: 0 10px;
 }
 
 #battery.warning {
-    background: orange;
+  background: orange;
 }
 
 #battery.critical {
-    background: red;
+  background: red;
 }
 
 #battery.full {
-    background: green;
+  background: green;
 }
 
 #wireplumber {
-    padding: 0 10px;
+  padding: 0 10px;
 }
 
 #wireplumber.muted {
-    background: rgb(136, 8, 8);
+  background: rgb(136, 8, 8);
 }
 
 #tray {
-    padding: 0 5px;
+  padding: 0 5px;
 }
 
 #tray menu {
-    border-radius: 5px;
+  border-radius: 5px;
 }
