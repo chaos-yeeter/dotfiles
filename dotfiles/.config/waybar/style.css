@@ -32,10 +32,6 @@ tooltip label {
   background: rgb(100, 114, 125);
 }
 
-.modules-center {
-  background: rgba(43, 48, 59, 0.5);
-}
-
 #clock {
   padding: 5px 10px;
 }
