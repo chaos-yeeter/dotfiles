@@ -151,6 +151,8 @@
             fzf # fuzzy search
 
             stow # symlinking dotfiles
+
+            jq # JSON processor
         ];
     };
 
