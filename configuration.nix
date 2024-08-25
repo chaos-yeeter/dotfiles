@@ -153,6 +153,8 @@
             stow # symlinking dotfiles
 
             jq # JSON processor
+
+            grimblast # screenshot util
         ];
     };
 
