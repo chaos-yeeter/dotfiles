@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-a3c8d6, ... }:
+{ config, pkgs, pkgs-a3c8d6, pkgs-unstable, ... }:
 
 {
     imports = [
