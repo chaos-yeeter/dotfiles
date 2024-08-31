@@ -112,6 +112,7 @@
             networkmanagerapplet # network applet
 
             bluez # bluetooth manager
+            pkgs-unstable.blueman # fixed battery notifications
 
             zoxide # fuzzy search cd
 
