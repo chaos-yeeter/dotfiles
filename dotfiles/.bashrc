@@ -16,12 +16,12 @@ mkcd() {
 tmuxer() {
     local sessions=$(
         tmux ls -F \#S 2>&1 \
-        | rg -v '^no server running on'
+        | grep -v '^no server running on'
     )
     if [[ "$TERM_PROGRAM" == "tmux" ]]; then
         sessions=$(
             printf "$sessions" \
-            | rg -v "^$(tmux display-message -p '#S')$"
+            | grep -v "^$(tmux display-message -p '#S')$"
         )
     fi
         
@@ -32,7 +32,7 @@ tmuxer() {
     )
 
     if [[ "$session_name" != "" ]]; then
-        if [[ $(printf "$sessions" | rg "^$session_name$") == "" ]]; then
+        if [[ $(printf "$sessions" | grep "^$session_name$") == "" ]]; then
             tmux new -ds "$session_name"
         fi
 
