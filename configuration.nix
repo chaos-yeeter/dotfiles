@@ -156,6 +156,8 @@
             jq # JSON processor
 
             grimblast # screenshot util
+
+            yaml-language-server # lsp for yaml
         ];
     };
 
