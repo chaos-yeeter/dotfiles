@@ -1,4 +1,4 @@
-{ config, pkgs-unstable, ... }:
+{ pkgs-unstable, ... }:
 
 {
     imports = [
@@ -196,14 +196,6 @@
         };
     };
 
-    # sound
-    sound = {
-        enable = true;
-        mediaKeys = {
-            enable = true;
-            volumeStep = "5%";
-        };
-    };
     security.rtkit.enable = true;
     services.pipewire = {
         enable = true;
