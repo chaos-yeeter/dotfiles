@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-a3c8d6, pkgs-unstable, ... }:
+{ config, pkgs-unstable, ... }:
 
 {
     imports = [
@@ -77,13 +77,13 @@
         isNormalUser = true;
         description = "frankenstein";
         extraGroups = [ "networkmanager" "wheel" "docker" ];
-        packages = with pkgs; [
+        packages = with pkgs-unstable; [
             firefox # browser
 
             kitty # terminal
 
             waybar # top bar
-            (pkgs.waybar.overrideAttrs (oldAttrs: {
+            (waybar.overrideAttrs (oldAttrs: {
                 mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
                 })
             )
@@ -95,11 +95,11 @@
 
             easyeffects # ui for audio devices
 
-            gnome.nautilus # file manager
-            gnome.dconf-editor # gsettings editor
-            gnome.adwaita-icon-theme # icon theme
-            gnome.eog # image viewer
-            gnome.gnome-calculator # calculator
+            nautilus # file manager
+            dconf-editor # gsettings editor
+            adwaita-icon-theme # icon theme
+            eog # image viewer
+            gnome-calculator # calculator
 
             polkit # privileged access manager
             lxqt.lxqt-policykit # dialogues for authentication
@@ -112,7 +112,7 @@
             networkmanagerapplet # network applet
 
             bluez # bluetooth manager
-            pkgs-unstable.blueman # fixed battery notifications
+            blueman # fixed battery notifications
 
             zoxide # fuzzy search cd
 
@@ -162,7 +162,7 @@
     };
 
     # system packages
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs-unstable; [
         neovim # editor
         tmux # terminal multiplexer
     ];
@@ -216,15 +216,15 @@
     # systemd services
     systemd.user.services = {
         # service for media controls from bluetooth devices
-        custom-mpris-proxy = {
+        custom-mpris-proxy = with pkgs-unstable; {
             description = "custom-mpris-proxy";
             after = [ "network.target" "sound.target" ];
             wantedBy = [ "default.target" ];
-            serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+            serviceConfig.ExecStart = "${bluez}/bin/mpris-proxy";
         };
     };
 
-    fonts.packages = with pkgs; [
+    fonts.packages = with pkgs-unstable; [
         noto-fonts
         noto-fonts-cjk
         noto-fonts-emoji
