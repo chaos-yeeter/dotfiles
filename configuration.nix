@@ -173,7 +173,6 @@
     # hyprland
     programs.hyprland = {
         enable = true;
-        package = pkgs-a3c8d6.hyprland;
     };
     security.pam.services.swaylock = {};
 
@@ -183,9 +182,8 @@
     # xdg portals
     xdg.portal = {
         enable = true;
-        extraPortals = [
-            pkgs.xdg-desktop-portal
-            pkgs.xdg-desktop-portal-gtk
+        extraPortals = with pkgs-unstable; [
+            xdg-desktop-portal-gtk
         ];
     };
 
