@@ -124,8 +124,8 @@
 
             playerctl # play/pause/next/etc through mpris
 
-            swaylock-effects # lockscreen
-            swayidle
+            hyprlock # lockscreen
+            hypridle # idle daemon
 
             ripgrep # fuzzy finder for neovim
 
@@ -174,7 +174,6 @@
     programs.hyprland = {
         enable = true;
     };
-    security.pam.services.swaylock = {};
 
     # polkit
     security.polkit.enable = true;

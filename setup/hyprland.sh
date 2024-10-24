@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# lock screen
+hyprlock &
+
+# idle daemon
+hypridle &
+
 # start polkit agent
 lxqt-policykit-agent &
 
