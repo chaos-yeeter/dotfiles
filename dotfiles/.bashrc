@@ -73,5 +73,3 @@ tmuxer() {
         tmux at -t "$session_name"
     fi
 }
-
-set -o vi
