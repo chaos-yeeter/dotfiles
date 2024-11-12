@@ -160,6 +160,8 @@
             yaml-language-server # lsp for yaml
 
             vlc # media player
+
+            sleek # SQL formatter
         ];
     };
 
