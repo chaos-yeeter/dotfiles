@@ -142,7 +142,6 @@
             nil # language server for nix
 
             nodePackages.typescript-language-server # LSP for typescript
-            nodePackages.prettier # formatter for ts, js, etc.
             vscode-langservers-extracted # LSP for html, css, eslint
             biome # formatter for html, js, ts, json, etc.
             tailwindcss-language-server # lsp for tailwind
