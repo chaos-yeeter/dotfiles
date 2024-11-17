@@ -144,7 +144,7 @@
 
             nodePackages.typescript-language-server # LSP for typescript
             vscode-langservers-extracted # LSP for html, css, eslint
-            biome # formatter for html, js, ts, json, etc.
+            prettierd # formatter for html, js, ts, json, etc.
             tailwindcss-language-server # lsp for tailwind
 
             wl-clipboard # clipboard support
