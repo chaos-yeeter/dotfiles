@@ -138,6 +138,7 @@
             taplo # LSP toolkit for toml
 
             lua-language-server # LSP for lua
+            stylua # formatter for lua
 
             nil # language server for nix
 
