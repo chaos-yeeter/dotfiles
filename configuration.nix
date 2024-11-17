@@ -162,6 +162,8 @@
             vlc # media player
 
             sleek # SQL formatter
+
+            obsidian # markdown notes
         ];
     };
 
