@@ -164,6 +164,8 @@
             sleek # SQL formatter
 
             obsidian # markdown notes
+
+            gimp # image editor
         ];
     };
 
