@@ -169,6 +169,7 @@
             gimp # image editor
 
             bibata-cursors # cursor theme
+            papirus-icon-theme # icon theme
         ];
     };
 
