@@ -167,6 +167,8 @@
             obsidian # markdown notes
 
             gimp # image editor
+
+            bibata-cursors # cursor theme
         ];
     };
 
