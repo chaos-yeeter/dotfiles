@@ -2,12 +2,11 @@
   border: none;
   font-family: FiraCode;
   min-height: 0;
-  border-radius: 20;
+  border-radius: 0;
 }
 
 window#waybar {
   background: transparent;
-  color: white;
 }
 
 tooltip {
@@ -20,36 +19,44 @@ tooltip label {
   padding: 0px;
 }
 
-#workspaces {
-  background: rgba(43, 48, 59, 0.5);
+#workspaces button {
+  color: white;
+  border-radius: 0.5rem;
+  background: transparent;
+  background-clip: border-box;
 }
 
 #workspaces button {
-  color: white;
+  padding: 0.25rem;
+  background: inherit;
 }
 
-#workspaces button.focused {
-  background: rgb(100, 114, 125);
+#workspaces button.active {
+  background: rgba(100, 114, 125, 0.6);
 }
 
 #clock {
+  color: white;
   padding: 5px 10px;
 }
 
-.modules-right {
-  background: rgba(43, 48, 59, 0.5);
-}
-
 #idle_inhibitor {
+  color: white;
+  border-radius: 0.5rem;
+  padding-right: 0.3rem; /* this is done to fix off-center icon */
   font-size: 1.5rem;
 }
 
 #idle_inhibitor.activated {
   /* This is done to fix offset between activated and deactivated icons */
   margin-top: 1px;
+  background: rgba(0, 113, 157, 0.8);
 }
 
 #battery {
+  color: white;
+  border-radius: 0.5rem;
+  margin: 0 0.5rem;
   padding: 0 10px;
 }
 
@@ -66,7 +73,9 @@ tooltip label {
 }
 
 #wireplumber {
+  color: white;
   padding: 0 10px;
+  border-radius: 0.5rem;
 }
 
 #wireplumber.muted {
