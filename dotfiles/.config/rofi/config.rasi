@@ -9,3 +9,5 @@ configuration {
   }
   icon-theme: "Papirus-Dark";
 }
+
+@theme "~/.local/share/rofi/themes/rounded-blue-dark.rasi"
