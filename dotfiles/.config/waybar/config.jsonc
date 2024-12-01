@@ -11,20 +11,26 @@
         }
     },
 
+    "clock": {
+        "tooltip": false
+    },
+
 
     "idle_inhibitor": {
         "format": " {icon} ",
         "format-icons": {
             "activated": "󰒳",
             "deactivated": "󰒲"
-        }
+        },
+        "tooltip": false
     },
 
     "wireplumber": {
         "on-click": "easyeffects",
         "format": "{volume}% {icon}",
         "format-muted": "Mute ",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""],
+        "tooltip": false
     },
 
     "battery": {
