@@ -97,6 +97,7 @@
 
             nautilus # file manager
             dconf-editor # gsettings editor
+            glib # gsettings cli
             adwaita-icon-theme # icon theme
             eog # image viewer
             gnome-calculator # calculator
