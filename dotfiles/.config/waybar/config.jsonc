@@ -34,12 +34,15 @@
     },
 
     "battery": {
-        "format": "{capacity}% {icon}",
+        "format": "{icon}",
         "format-icons": {
             "discharging": ["󰁺", "󰁺", "󰁼", "󰁽", "󰁾", "󰁾", "󰂀", "󰂀", "󰂀", "󰁹"],
-            "charging": ["󰂄"],
-            "full": ["󰁹"]
+            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋"],
+            "full": ["󰂅"]
         },
+        "format-time": "{H}h {M}m",
+        "tooltip-format-discharging": "{capacity}% ({time} left)",
+        "tooltip-format-charging": "{capacity}% ({time} to full)",
         "interval": 1,
         "states": {
             "warning": 30,
