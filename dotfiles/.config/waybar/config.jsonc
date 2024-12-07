@@ -26,7 +26,10 @@
     },
 
     "wireplumber": {
-        "on-click": "easyeffects",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "easyeffects",
+        "on-scroll-up": "",
+        "on-scroll-down": "",
         "format": "{volume}% {icon}",
         "format-muted": "Mute ",
         "format-icons": ["", "", ""],
