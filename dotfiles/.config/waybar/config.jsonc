@@ -32,7 +32,7 @@
         "on-scroll-up": "",
         "on-scroll-down": "",
         "format": "{volume}% {icon}",
-        "format-muted": "Mute ",
+        "format-muted": "Mute ",
         "format-icons": ["", "", ""],
         "tooltip": false
     },
