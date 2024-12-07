@@ -1,5 +1,6 @@
 {
     "layer": "top",
+    "margin": "5",
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["idle_inhibitor", "wireplumber", "battery", "tray"],
