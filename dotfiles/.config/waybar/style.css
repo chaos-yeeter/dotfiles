@@ -21,14 +21,16 @@ tooltip label {
 
 #workspaces button {
   color: white;
+  padding: 0.25rem;
   border-radius: 0.5rem;
+  background: inherit;
   background: transparent;
   background-clip: border-box;
 }
 
-#workspaces button {
-  padding: 0.25rem;
-  background: inherit;
+/* fix off-center workspace labels */
+#workspaces button > * {
+  margin-left: 0.1rem;
 }
 
 #workspaces button.active {
