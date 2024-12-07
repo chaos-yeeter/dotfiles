@@ -1,3 +1,17 @@
+@define-color background-color #121212;
+@define-color text-color white;
+
+@define-color gray-900 #212121;
+@define-color gray-800 #424242;
+@define-color gray-700 #616161;
+
+@define-color teal-800 #00695C;
+@define-color green-800 #2E7D32;
+@define-color orange-800 #EF6C00;
+@define-color red-800 #C62828;
+@define-color blue-gray-800 #37474F;
+@define-color cyan-900 #006064;
+
 * {
   border: none;
   font-family: FiraCode;
@@ -6,91 +20,108 @@
 }
 
 window#waybar {
-  background: transparent;
+  background: @background-color;
+  border-radius: 0.5rem;
 }
 
 tooltip {
-  background: rgba(43, 48, 59, 0.5);
-  border: 1px solid rgba(100, 114, 125, 0.5);
+  background: @gray-900;
+  border-radius: 0.5rem;
 }
 
 tooltip label {
-  color: white;
-  padding: 0px;
+  color: @text-color;
+  padding: 0;
 }
 
 #workspaces button {
-  color: white;
-  padding: 0.25rem;
-  border-radius: 0.5rem;
-  background: inherit;
   background: transparent;
-  background-clip: border-box;
-}
-
-/* fix off-center workspace labels */
-#workspaces button > * {
-  margin-left: 0.1rem;
+  color: @text-color;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  padding-left: 0.35rem; /* fix off-center workspace labels */
 }
 
 #workspaces button.active {
-  background: rgba(100, 114, 125, 0.6);
+  background: @gray-800;
 }
 
 #clock {
-  color: white;
-  padding: 5px 10px;
+  color: @text-color;
 }
 
 #idle_inhibitor {
-  color: white;
+  color: @text-color;
   margin: 0 0.25rem;
-  padding-right: 0.3rem; /* this is done to fix off-center icon */
+  padding: 0;
+  margin-bottom: 1px; /* fix off-center icon */
+  padding-right: 0.3rem; /* fix off-center icon */
   border-radius: 0.5rem;
   font-size: 1.5rem;
 }
 
 #idle_inhibitor.activated {
-  /* This is done to fix offset between activated and deactivated icons */
-  margin-top: 1px;
-  background: rgba(0, 113, 157, 0.8);
+  margin-top: 1px; /* fix off-center icon */
+  margin-bottom: 0; /* fix off-center icon */
+  background: @teal-800;
 }
 
 #battery {
-  color: white;
+  color: @text-color;
   margin: 0 0.25rem;
-  padding: 0 10px;
+  padding: 0 0.7rem;
   border-radius: 0.5rem;
 }
 
+#battery.full {
+  background: @green-800;
+}
+
 #battery.warning {
-  background: orange;
+  background: @orange-800;
 }
 
 #battery.critical {
-  background: red;
-}
-
-#battery.full {
-  background: green;
+  background: @red-800;
 }
 
 #wireplumber {
-  color: white;
+  color: @text-color;
   margin: 0 0.25rem;
-  padding: 0 10px;
+  padding: 0 0.5rem;
+  padding-right: 1rem; /* fix off-center icon */
   border-radius: 0.5rem;
 }
 
 #wireplumber.muted {
-  background: rgb(136, 8, 8);
+  background: @blue-gray-800;
 }
 
 #tray {
-  margin: 0 0.25rem;
-  padding: 0 5px;
+  margin: 0 0.1rem;
+  padding: 0;
+}
+
+#tray * {
+  box-shadow: none;
 }
 
 #tray menu {
-  border-radius: 5px;
+  border-radius: 0.5rem;
+  background-clip: border-box;
+  background: @gray-900;
+  color: @text-color;
+}
+
+/* ref: https://lazka.github.io/pgi-docs/Gtk-3.0/classes/MenuItem.html#class-details */
+#tray menu menuitem {
+  color: @text-color;
+}
+
+#tray menu menuitem:not(disabled):hover {
+  background: @cyan-900;
+}
+
+#tray menu menuitem:disabled {
+  color: @gray-700;
 }
