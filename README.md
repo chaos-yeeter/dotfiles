@@ -18,13 +18,9 @@
 > Whenever your hardware-configuration.nix changes, you should take a look as to why that is the case.
 >
 > This check tries to prevent some problematic scenarios:
-> 1. So in case where you clone this repo and run nixos-rebuild on fresh install, (without this check) build would be successful.
+>
+> 1. When you clone this repo and run nixos-rebuild on fresh install, (without this check) build would be successful.
 >    But, when you try to boot into the new generation, grub will not be able to find the partition with partition id (because ids are different for each partition).
 >    Because of this, grub will fail to boot.
 > 2. In case hardware-configuration.nix changes for some reason (e.g. you added new hardware), this check makes sure we are aware of this.
 >    This way, unexpected things don't happen when you boot into the new generation.
->
-> IF THIS IS CAUSING ISSUES, WHY TF WOULD YOU ADD IT TO GIT?
-> 
-> Well, dear sir/madam, without this nixos fails to build 🤡.
-> More specifically, nixos checks for git status of this file at build time even if it has been added to gitignore. If it does not exist in git, build stops.
