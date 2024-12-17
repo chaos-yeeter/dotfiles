@@ -8,7 +8,7 @@ while true; do
 
     if [ "$charging_status" == "Discharging" ]; then
         if [ "$battery_level" -le 15 ]; then
-            dunstify --urgency "critical" --replace "$notification_id" "Battery low" "Level: ${battery_level}";
+            dunstify --urgency "critical" --replace "$notification_id" "Battery low" "Level: ${battery_level}%";
         else
             dunstify --close "$notification_id";
         fi

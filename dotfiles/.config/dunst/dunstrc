@@ -40,19 +40,23 @@
     dmenu = rofi -dmenu -p dunst
 
 [urgency_low]
-    background = "#26323877"
-    foreground = "#F9FAF988"
+    background = "#21212177"
+    foreground = "#FAFAFA"
     timeout = 10
 
 [urgency_normal]
-    background = "#26323877"
-    foreground = "#F9FAF9"
+    background = "#212121"
+    foreground = "#FAFAFA"
     timeout = 10
 
 [urgency_critical]
-    background = "#AA0022CC"
-    foreground = "#F9FAF9"
+    background = "#880808"
+    foreground = "#FAFAFA"
     timeout = 0
+
+[battery_full]
+    summary = "Battery full"
+    background = "#2E7D32"
 
 [play_sound]
     summary = "*"
