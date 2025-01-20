@@ -19,3 +19,7 @@ min_time = 500
 
 [git_metrics]
 disabled = false
+
+[nix_shell]
+symbol = '❄️'
+format = '[$symbol $state \($name\) ]($style)'
