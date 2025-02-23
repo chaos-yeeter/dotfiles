@@ -133,7 +133,6 @@
             starship # prompt
 
             ruff # linter/formatter for python
-            ruff-lsp
             pyright # LSP for python
 
             taplo # LSP toolkit for toml
