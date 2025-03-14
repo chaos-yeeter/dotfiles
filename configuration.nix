@@ -102,9 +102,6 @@
             eog # image viewer
             gnome-calculator # calculator
 
-            polkit # privileged access manager
-            lxqt.lxqt-policykit # dialogues for authentication
-
             brightnessctl # brightness controls
 
             git
@@ -125,9 +122,12 @@
 
             playerctl # play/pause/next/etc through mpris
 
+            polkit # privileged access manager
+
             hyprlock # lockscreen
             hypridle # idle daemon
             hyprpaper # wallpaper util
+            hyprpolkitagent # polkit agent
 
             ripgrep # fuzzy finder for neovim
 
