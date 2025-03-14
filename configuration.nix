@@ -184,6 +184,11 @@
     # set neovim as default editor
     environment.variables.EDITOR = "nvim";
 
+    # set XDG variables
+    environment.sessionVariables = {
+        XDG_CONFIG_HOME = "$HOME/.config/";
+    };
+
     # hyprland
     programs.hyprland = {
         enable = true;
