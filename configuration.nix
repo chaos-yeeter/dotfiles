@@ -98,7 +98,6 @@
             nautilus # file manager
             dconf-editor # gsettings editor
             glib # gsettings cli
-            adwaita-icon-theme # icon theme
             eog # image viewer
             gnome-calculator # calculator
 
@@ -114,7 +113,7 @@
 
             zoxide # fuzzy search cd
 
-            gitui # git ui
+            gitui
 
             gnumake # for make
 
@@ -131,7 +130,7 @@
 
             ripgrep # fuzzy finder for neovim
 
-            starship # prompt
+            starship # shell prompt
 
             ruff # linter/formatter for python
             basedpyright # LSP for python
@@ -182,7 +181,9 @@
     ];
 
     # set neovim as default editor
-    environment.variables.EDITOR = "nvim";
+    environment.variables =  {
+        EDITOR = "nvim";
+    };
 
     # set XDG variables
     environment.sessionVariables = {
