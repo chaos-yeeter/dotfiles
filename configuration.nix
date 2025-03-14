@@ -188,6 +188,7 @@
     # set XDG variables
     environment.sessionVariables = {
         XDG_CONFIG_HOME = "$HOME/.config/";
+        XDG_SCREENSHOTS_DIR="$HOME/Pictures/screenshots";
     };
 
     # hyprland
