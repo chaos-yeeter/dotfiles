@@ -170,6 +170,10 @@
             gnome-themes-extra # for adwaita theme
 
             vscode-fhs
+
+            qt5.qtwayland # qt 5 support
+            libsForQt5.qt5ct # qt 5 theme manager
+            adwaita-qt # theme for qt apps
         ];
     };
 
@@ -188,11 +192,19 @@
     environment.sessionVariables = {
         XDG_CONFIG_HOME = "$HOME/.config";
         XDG_SCREENSHOTS_DIR="$HOME/Pictures/screenshots";
+        QT_QPA_PLATFORM="wayland";
     };
 
     # hyprland
     programs.hyprland = {
         enable = true;
+    };
+
+    # qt setup
+    qt = {
+        enable = true;
+        platformTheme = "qt5ct";
+        style = "adwaita-dark";
     };
 
     # gtk dark theme setup
