@@ -1,9 +1,6 @@
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
 
-# setup zoxide
-eval "$(zoxide init bash --hook pwd --cmd j)"
-
 # setup starship
 eval "$(starship init bash)"
 
@@ -73,3 +70,6 @@ tmuxer() {
         tmux at -t "$session_name"
     fi
 }
+
+# setup zoxide
+eval "$(zoxide init bash --hook pwd --cmd j)"
