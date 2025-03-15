@@ -96,8 +96,6 @@
             easyeffects # ui for audio devices
 
             nautilus # file manager
-            dconf-editor # gsettings editor
-            glib # gsettings cli
             eog # image viewer
             gnome-calculator # calculator
 
@@ -169,6 +167,7 @@
 
             bibata-cursors # cursor theme
             papirus-icon-theme # icon theme
+            gnome-themes-extra # for adwaita theme
 
             vscode-fhs
         ];
@@ -187,13 +186,28 @@
 
     # set XDG variables
     environment.sessionVariables = {
-        XDG_CONFIG_HOME = "$HOME/.config/";
+        XDG_CONFIG_HOME = "$HOME/.config";
         XDG_SCREENSHOTS_DIR="$HOME/Pictures/screenshots";
     };
 
     # hyprland
     programs.hyprland = {
         enable = true;
+    };
+
+    # gtk dark theme setup
+    programs.dconf = {
+        enable = true;
+        profiles.user.databases = [{
+            settings =  {
+                "org/gnome/desktop/interface" = {
+                    gtk-theme = "Adwaita";
+                    color-scheme = "prefer-dark";
+                    cursor-theme = "Bibata-Modern-Ice";
+                    icon-theme = "Papirus-Dark";
+                };
+            };
+        }];
     };
 
     # polkit
