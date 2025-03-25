@@ -177,6 +177,14 @@
         ];
     };
 
+    # periodic gc & nix store optimization
+    nix.optimise.automatic = true;
+    nix.gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 7d";
+    };
+
     # system packages
     environment.systemPackages = with pkgs-unstable; [
         neovim # editor
