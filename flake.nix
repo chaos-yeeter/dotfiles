@@ -1,5 +1,5 @@
 {
-    description = "my cool flake!";
+    description = "system configuration";
 
     inputs = {
         # ref: https://nixos-and-flakes.thiscute.world/nixos-with-flakes/downgrade-or-upgrade-packages
