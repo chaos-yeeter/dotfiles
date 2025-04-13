@@ -1,0 +1,6 @@
+set editing-mode vi
+set keymap vi-command
+"\C-w": unix-word-rubout
+
+set keymap vi-insert
+"\C-w": unix-word-rubout
