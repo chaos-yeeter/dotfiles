@@ -1,22 +1,26 @@
 {
     "layer": "top",
-    "margin": "5",
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["idle_inhibitor", "wireplumber", "battery", "tray"],
-
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+        "wireplumber",
+        "battery",
+        "tray"
+    ],
     "hyprland/workspaces": {
         "format": "{name}",
         "persistent_workspaces": {
             "*": 4
         }
     },
-
     "clock": {
         "tooltip": false
     },
-
-
     "idle_inhibitor": {
         "format": " {icon} ",
         "format-icons": {
@@ -25,7 +29,6 @@
         },
         "tooltip": false
     },
-
     "wireplumber": {
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "easyeffects",
@@ -33,16 +36,42 @@
         "on-scroll-down": "",
         "format": "{volume}% {icon}",
         "format-muted": "Mute ",
-        "format-icons": ["", "", ""],
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
         "tooltip": false
     },
-
     "battery": {
         "format": "{icon}",
         "format-icons": {
-            "discharging": ["󰁺", "󰁺", "󰁼", "󰁽", "󰁾", "󰁾", "󰂀", "󰂀", "󰂀", "󰁹"],
-            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋"],
-            "full": ["󰂅"]
+            "discharging": [
+                "󰁺",
+                "󰁺",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁾",
+                "󰂀",
+                "󰂀",
+                "󰂀",
+                "󰁹"
+            ],
+            "charging": [
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋"
+            ],
+            "full": [
+                "󰂅"
+            ]
         },
         "format-time": "{H}h {M}m",
         "tooltip-format-discharging": "{capacity}% ({time} left)",
@@ -53,7 +82,6 @@
             "critical": 15
         }
     },
-
     "tray": {
         "spacing": 3,
         "icon-size": 24,
