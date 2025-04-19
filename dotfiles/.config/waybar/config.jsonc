@@ -19,7 +19,23 @@
         }
     },
     "clock": {
-        "tooltip": false
+        "tooltip": true,
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "smooth-scrolling-threshold": 0.3,
+        "locale": "en_GB.UTF-8",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "format": {
+                "months": "<span color='#64B5F6'><b>{}</b></span>",
+                "weekdays": "<span color='#FFCC66'>{}</span>",
+                "days": "<span color='#FAFAFA'><b>{}</b></span>",
+                "today": "<span color='#FF6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode"
+        }
     },
     "idle_inhibitor": {
         "format": " {icon} ",

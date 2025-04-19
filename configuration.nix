@@ -58,6 +58,10 @@
             LC_TELEPHONE = "en_IN";
             LC_TIME = "en_IN";
         };
+        supportedLocales = [
+            "en_IN/UTF-8"
+            "en_GB.UTF-8/UTF-8" # needed in waybar to start calendar week on monday instead of sunday
+        ];
     };
 
     # services
