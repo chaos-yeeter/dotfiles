@@ -4,7 +4,7 @@
     monitor = 0
     follow = keyboard
     origin = top-right
-    offset = 15x15
+    offset = (15, 15)
 
     separator_height = 0
     separator_color = auto

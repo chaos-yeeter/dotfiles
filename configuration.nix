@@ -178,6 +178,8 @@
       qt5.qtwayland # qt 5 support
       libsForQt5.qt5ct # qt 5 theme manager
       adwaita-qt # theme for qt apps
+
+      alsa-utils # `aplay` for playing sounds
     ];
   };
 
