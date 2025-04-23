@@ -179,6 +179,10 @@
       libsForQt5.qt5ct # qt 5 theme manager
       adwaita-qt # theme for qt apps
 
+      kdePackages.kdenlive # video editor
+      libsForQt5.mlt
+      ffmpeg
+
       alsa-utils # `aplay` for playing sounds
     ];
   };
