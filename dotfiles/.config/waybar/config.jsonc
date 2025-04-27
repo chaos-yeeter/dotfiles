@@ -62,6 +62,18 @@
     "battery": {
         "format": "{icon}",
         "format-icons": {
+            "plugged": [
+                "󰁺",
+                "󰁺",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁾",
+                "󰂀",
+                "󰂀",
+                "󰂀",
+                "󰁹"
+            ],
             "discharging": [
                 "󰁺",
                 "󰁺",
