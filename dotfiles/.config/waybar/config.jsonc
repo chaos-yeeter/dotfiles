@@ -50,8 +50,8 @@
         "on-click-right": "easyeffects",
         "on-scroll-up": "",
         "on-scroll-down": "",
-        "format": "{volume}% {icon}",
-        "format-muted": "Mute ",
+        "format": "{icon}",
+        "format-muted": "",
         "format-icons": [
             "",
             "",
