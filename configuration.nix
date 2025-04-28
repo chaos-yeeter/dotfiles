@@ -131,7 +131,6 @@
       hyprlock # lockscreen
       hypridle # idle daemon
       hyprpaper # wallpaper util
-      hyprpolkitagent # polkit agent
 
       ripgrep # fuzzy finder for neovim
 
@@ -176,6 +175,7 @@
       bibata-cursors # cursor theme
       papirus-icon-theme # icon theme
       gnome-themes-extra # for adwaita theme
+      polkit_gnome # gnome polkit agent
 
       vscode-fhs
 
@@ -284,6 +284,23 @@
       after = ["network.target" "sound.target"];
       wantedBy = ["default.target"];
       serviceConfig.ExecStart = "${bluez}/bin/mpris-proxy";
+    };
+
+    polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = ["graphical-session.target"];
+      wants = ["graphical-session.target"];
+      after = ["graphical-session.target"];
+      environment = {
+        GTK_THEME = "Adwaita:dark";
+      };
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs-unstable.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
     };
   };
 
