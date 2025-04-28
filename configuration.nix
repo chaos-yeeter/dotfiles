@@ -1,4 +1,8 @@
-{pkgs-unstable, ...}: {
+{
+  pkgs-unstable,
+  lib,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix # include the results of the hardware scan
   ];
@@ -261,6 +265,7 @@
       setSocketVariable = true;
     };
   };
+  systemd.services.docker.wantedBy = lib.mkForce [];
 
   security.rtkit.enable = true;
   services.pipewire = {
