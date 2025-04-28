@@ -314,6 +314,12 @@
     nerd-fonts.fira-code
   ];
 
+  # reduce journalctl flush time during startup
+  services.journald = {
+    storage = "volatile";
+    extraConfig = "RuntimeMaxUse=16M";
+  };
+
   # unfree packages
   nixpkgs.config.allowUnfree = true;
 
