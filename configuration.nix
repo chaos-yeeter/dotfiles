@@ -1,5 +1,6 @@
 {
   pkgs-unstable,
+  inputs,
   lib,
   ...
 }: {
@@ -84,7 +85,10 @@
     description = "frankenstein";
     extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs-unstable; [
-      firefox # browser
+      firefox # TODO: remove this
+
+      # TODO: switch to official package after zen broswer is added to nixpkgs
+      inputs.zen-browser.packages."${system}".default
 
       kitty # terminal
 
