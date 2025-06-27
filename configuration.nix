@@ -107,6 +107,8 @@
       nautilus # file manager
       eog # image viewer
       gnome-calculator # calculator
+      gnome-system-monitor # resource monitor
+      baobab # disk utility
 
       brightnessctl # brightness controls
 
