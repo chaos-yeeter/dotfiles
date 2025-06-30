@@ -1,0 +1,15 @@
+[Unit]
+Description=Autostart gnome polkit authentication agent
+Wants=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=simple
+Environment=GTK_THEME="Adwaita:dark"
+ExecStart=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+Restart=on-failure
+RestartSec=1
+TimeoutStopSec=10
+
+[Install]
+WantedBy=graphical-session.target

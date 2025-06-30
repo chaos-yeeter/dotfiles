@@ -1,21 +1,44 @@
-ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+update:
+	sudo pacman -Sy --needed archlinux-keyring
+	sudo pacman -Syu --needed \
+		bash starship zoxide fzf \
+		neovim wl-clipboard xdg-utils ripgrep \
+		tmux \
+		git gitui \
+		base-devel gcc make stow jq \
+		ttf-firacode-nerd noto-fonts noto-fonts-extra noto-fonts-emoji \
+		hyprland hyprlock hypridle hyprpaper xdg-desktop-portal-gtk \
+		waybar \
+		rofi-wayland dunst libnotify \
+		pipewire pipewire-pulse wireplumber easyeffects calf alsa-utils \
+		brightnessctl playerctl \
+		network-manager-applet bluez blueman \
+		polkit polkit-gnome \
+		nautilus gvfs gnome-disk-utility gnome-system-monitor eog \
+		papirus-icon-theme gnome-themes-extra \
+		qt5-wayland qt5ct \
+		ruff \
+		taplo \
+		lua-language-server stylua \
+		typescript-language-server tailwindcss-language-server yaml-language-server \
+		vlc \
+		gimp \
+		obsidian \
+		kdenlive ffmpeg mlt
 
-nixos-hardware-file-check:
-	# exit when current hardware-configuration is different from default hardware-configuration in /etc/nixos
-	@if [ -n "$(cmp ${ROOT_DIR}/hardware-configuration.nix /etc/nixos/hardware-configuration.nix)" ]; then \
-		echo '/etc/nixos/hardware-configuration.nix and ${ROOT_DIR}/hardware-configuration.nix are different'; \
-		echo 'this can cause issues. check following diff and try again'; \
-		diff /etc/nixos/hardware-configuration.nix ${ROOT_DIR}/hardware-configuration.nix; \
-		exit 1; \
+	yay -Sy --needed \
+		zen-browser-bin \
+		basedpyright \
+		vscode-langservers-extracted prettierd \
+		grimblast-git \
+		sleek \
+		bibata-cursor-theme \
+		adwaita-qt-git
+
+	unused_packages="$(pacman -Qdtq)"
+	@if [[ -n "$$unused_packages" ]]; then \
+		sudo pacman -Rsup "$$unused_packages"; \
 	fi
 
-nixos-switch:
-	make --no-print-directory nixos-hardware-file-check
-	sudo nixos-rebuild switch --flake ${ROOT_DIR}
-
-nixos-test:
-	make --no-print-directory nixos-hardware-file-check
-	sudo nixos-rebuild test --flake ${ROOT_DIR}
-
-stow:
-	stow dotfiles -t ~ -vv
+config:
+	stow dotfiles -t ~ -vv 2>&1

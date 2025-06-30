@@ -3,11 +3,11 @@
 [user]
 	name = chaos-yeeter
 	email = kayasthamihir11@gmail.com
-	signingkey = /home/frankenstein/.ssh/github.pub
+	signingkey = ~/.ssh/github.pub
 [commit]
 	gpgSign = true
 [gpg "ssh"]
-	allowedSignersFile = /home/frankenstein/.ssh/allowed_signers
+	allowedSignersFile = ~/.ssh/allowed_signers
 [alias]
 	st = status
 	co = checkout
