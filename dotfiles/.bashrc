@@ -16,7 +16,7 @@ mkcd() {
 
 tmuxer() {
     # get currently running sessions
-    local sessions="$(tmux ls -F '#S' 4>/dev/null)"
+    local sessions="$(tmux ls -F '#S' 2>/dev/null)"
 
     # exlude active session
     local active_session=""
