@@ -14,6 +14,7 @@ update:
 		brightnessctl playerctl \
 		network-manager-applet bluez blueman \
 		polkit polkit-gnome \
+		gsettings-desktop-schemas \
 		nautilus gvfs gnome-disk-utility gnome-system-monitor eog \
 		papirus-icon-theme gnome-themes-extra \
 		qt5-wayland qt5ct \
