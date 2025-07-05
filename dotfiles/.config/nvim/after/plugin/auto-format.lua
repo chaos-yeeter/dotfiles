@@ -1,8 +1,13 @@
 require("conform").setup({
+	formatters = {
+		sql_formatter = {
+			prepend_args = { "--config", '{"keywordCase": "upper"}' },
+		},
+	},
 	formatters_by_ft = {
 		lua = { "stylua" },
 		python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
-		sql = { "sleek" },
+		sql = { "sql_formatter" },
 		typescript = { "prettierd" },
 		typescriptreact = { "prettierd" },
 		javascript = { "prettierd" },

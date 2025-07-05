@@ -33,7 +33,7 @@ update:
 		basedpyright \
 		vscode-langservers-extracted prettierd \
 		grimblast-git \
-		sleek \
+		sql-formatter \
 		bibata-cursor-theme \
 		adwaita-qt-git
 
