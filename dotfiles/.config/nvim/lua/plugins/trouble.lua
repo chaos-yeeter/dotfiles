@@ -1,41 +1,41 @@
 return {
 	"folke/trouble.nvim",
-	opts = {}, -- for default options, refer to the configuration section for custom setup.
+	opts = {},
 	cmd = "Trouble",
 	keys = {
 		{
 			"<leader>ld",
-			"<cmd>Trouble lsp_definitions toggle focus=true<cr>",
+			":Trouble lsp_definitions toggle focus=true<cr>",
 			desc = "LSP definitions",
 		},
 		{
 			"<leader>lr",
-			"<cmd>Trouble lsp_references toggle focus=true<cr>",
+			":Trouble lsp_references toggle focus=true<cr>",
 			desc = "LSP references",
 		},
 		{
 			"<leader>lt",
-			"<cmd>Trouble lsp_type_definitions toggle focus=true<cr>",
+			":Trouble lsp_type_definitions toggle focus=true<cr>",
 			desc = "LSP type definitions",
 		},
 		{
 			"<leader>ls",
-			"<cmd>Trouble symbols toggle focus=true<cr>",
-			desc = "Buffer sumbols",
+			":Trouble symbols toggle focus=true<cr>",
+			desc = "Buffer symbols",
 		},
 		{
 			"<leader>gd",
-			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+			":Trouble diagnostics toggle filter.buf=0<cr>",
 			desc = "Buffer diagnostics",
 		},
 		{
 			"<leader>gD",
-			"<cmd>Trouble diagnostics toggle focus=true<cr>",
+			":Trouble diagnostics toggle focus=true<cr>",
 			desc = "Global diagnostics",
 		},
 		{
 			"<leader>gq",
-			"<cmd>Trouble qflist toggle focus=true<cr>",
+			":Trouble qflist toggle focus=true<cr>",
 			desc = "Quickfix list",
 		},
 	},
