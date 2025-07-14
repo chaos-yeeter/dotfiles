@@ -1,3 +1,5 @@
+require("package-manager")
+
 -- highlight current line & enable relative line numbers
 vim.opt.cursorline = true
 vim.opt.number = true
