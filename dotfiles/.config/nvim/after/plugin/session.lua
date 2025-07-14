@@ -2,13 +2,13 @@ local session_dir = vim.fn.expand("$HOME/.sessions/neovim/")
 local session_autocmd_group = vim.api.nvim_create_augroup("AutoSessionLoader", { clear = true })
 
 -- ref: https://neovim.io/doc/user/options.html#'sessionoptions'
-Utils.set("sessionoptions", "buffers,curdir,folds,resize,tabpages,winsize,options")
+vim.opt.sessionoptions = "buffers,curdir,folds,resize,tabpages,winsize,options"
 
 -- manage session files
-Utils.map("n", "<leader>ss", function()
+vim.keymap.set("n", "<leader>ss", function()
 	vim.g.CUSTOM_SAVE_SESSION_FLAG = false
 	vim.cmd(string.format("Oil--float %s", session_dir))
-end, { desc = "Open sessions directory" })
+end, { desc = "manage sessions" })
 
 local function exists(path)
 	local success, err = os.rename(path, path)
@@ -36,7 +36,17 @@ local function create_session()
 	vim.cmd("silent mksession! " .. session_file_path)
 end
 
-_ = Utils.set_interval(create_session, 10000)
+-- periodically execute callback
+-- ref: https://neovim.io/doc/user/luvref.html#uv_timer_t
+local function set_interval(callback, interval_in_ms)
+	local timer = vim.uv.new_timer()
+	timer:start(interval_in_ms, interval_in_ms, function()
+		vim.schedule(callback)
+	end)
+	return timer
+end
+
+_ = set_interval(create_session, 10000)
 
 vim.api.nvim_create_autocmd({ "VimLeavePre" }, {
 	pattern = { "*" },
