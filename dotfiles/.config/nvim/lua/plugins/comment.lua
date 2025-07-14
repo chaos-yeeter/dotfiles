@@ -1,6 +1,11 @@
 return {
-	"numToStr/Comment.nvim",
-	config = function()
-		require("Comment").setup()
-	end,
+	"echasnovski/mini.comment",
+	version = "*",
+	opts = {
+		mappings = {
+			comment = "<leader>?",
+			comment_line = "<leader>/",
+			comment_visual = "<leader>/",
+		},
+	},
 }
