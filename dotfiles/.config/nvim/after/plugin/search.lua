@@ -1,36 +1,32 @@
-local telescope = require("telescope")
-local builtin = require("telescope.builtin")
 local open_with_trouble = require("trouble.sources.telescope").open
 
--- show hidden files
-telescope.setup({
+require("telescope").setup({
 	defaults = {
 		mappings = {
-			i = { ["<c-t>"] = open_with_trouble },
-			n = { ["<c-t>"] = open_with_trouble },
+			i = { ["<C-t>"] = open_with_trouble },
+			n = { ["<C-t>"] = open_with_trouble },
+		},
+		wrap_results = true,
+		preview = {
+			ls_short = true,
 		},
 	},
 	pickers = {
 		find_files = {
 			hidden = true,
+			file_ignore_patterns = SEARCH_IGNORE_PATHS,
+			additional_args = function(_)
+				return { "--hidden" }
+			end,
 		},
 		live_grep = {
-			file_ignore_patterns = { ".git", "node_modules", ".venv" },
+			file_ignore_patterns = SEARCH_IGNORE_PATHS,
 			additional_args = function(_)
 				return { "--hidden" }
 			end,
 		},
 		lsp_dynamic_workspace_symbols = {
-			file_ignore_patterns = { ".cache" },
+			file_ignore_patterns = SEARCH_IGNORE_PATHS,
 		},
 	},
 })
-
--- search
-local search_trigger = "<leader>f"
-Utils.map("n", string.format("%sg", search_trigger), builtin.git_files)
-Utils.map("n", string.format("%sf", search_trigger), function()
-	builtin.find_files({ find_command = { "rg", "--files", "--hidden", "-g", "!.git" } })
-end)
-Utils.map("n", string.format("%sw", search_trigger), builtin.live_grep)
-Utils.map("n", string.format("%sb", search_trigger), builtin.buffers)

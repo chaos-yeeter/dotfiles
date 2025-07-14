@@ -1,3 +1,5 @@
+SEARCH_IGNORE_PATHS = { ".cache/", ".git/", "node_modules/", ".venv/" }
+
 require("package-manager")
 
 -- highlight current line & enable relative line numbers
