@@ -2,6 +2,7 @@ export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
 export XDG_CONFIG_HOME="$HOME/.config";
 export XDG_SCREENSHOTS_DIR="$HOME/Pictures/screenshots";
+export XDG_STATE_HOME="$HOME/.local/state";
 export QT_QPA_PLATFORMTHEME="qt5ct";
 export EDITOR="$(which nvim)"
 
