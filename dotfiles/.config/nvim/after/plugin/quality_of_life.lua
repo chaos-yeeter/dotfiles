@@ -14,3 +14,10 @@ vim.api.nvim_create_autocmd({ "FocusLost" }, {
 	command = "wa!",
 	group = autocmd_group,
 })
+
+-- redraw status line on branch change: gitui (TabEnter), git cli (FocusGained)
+vim.api.nvim_create_autocmd({ "FocusGained", "TabEnter" }, {
+	pattern = "*",
+	command = "redrawstatus",
+	group = autocmd_group,
+})

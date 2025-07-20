@@ -38,6 +38,9 @@ vim.opt.conceallevel = 0
 -- set command line height to 1
 vim.opt.cmdheight = 1
 
+-- custom status line
+vim.opt.statusline = "%-f%m%r:%l:%c%=%{trim(system('git branch --show-current 2>/dev/null'))}"
+
 -- buffer & window management
 vim.keymap.set("n", "<leader>w", ":wa<CR>", { desc = "write all changed buffers" })
 vim.keymap.set("n", "<leader>c", ":silent bp | sp | bn | bd!<CR>", { desc = "close current buffer" })
