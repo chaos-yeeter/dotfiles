@@ -20,7 +20,7 @@ local palette = {
 
 local highlight = vim.api.nvim_set_hl
 highlight(0, "Normal", { bg = palette.bg, fg = palette.fg })
-highlight(0, "CursorLine", { bg = "#121212" })
+highlight(0, "CursorLine", { bg = "#202020" })
 highlight(0, "Comment", { fg = palette.comment, italic = true })
 highlight(0, "String", { fg = palette.green })
 highlight(0, "Character", { fg = palette.orange })
@@ -47,11 +47,12 @@ highlight(0, "Underlined", { fg = palette.blue, underline = true })
 
 -- LSP diagnostics
 highlight(0, "DiagnosticError", { fg = palette.red })
+highlight(0, "DiagnosticUnderlineError", { undercurl = true, sp = palette.red })
 highlight(0, "DiagnosticWarn", { fg = palette.yellow })
 highlight(0, "DiagnosticInfo", { fg = palette.blue })
 highlight(0, "DiagnosticHint", { fg = palette.cyan })
 
--- Telescope / Treesitter / other plugin groups
+-- telescope, treesitter & other plugin highlights
 highlight(0, "TelescopePromptPrefix", { fg = palette.red })
 highlight(0, "TelescopePromptNormal", { fg = palette.fg, bg = "#101010" })
 highlight(0, "TelescopeResultsNormal", { fg = palette.fg, bg = palette.bg })
@@ -71,7 +72,12 @@ highlight(0, "@lsp.type.namespace", { fg = palette.fg })
 highlight(0, "@class", { fg = palette.orange })
 highlight(0, "@lsp.type.class", { fg = palette.orange })
 
--- Terminal colours setup
+-- markdown URLs
+highlight(0, "@markup.link", { underline = false })
+highlight(0, "@markup.link.label", { fg = palette.fg })
+highlight(0, "@markup.link.url", { fg = palette.blue })
+
+-- terminal colour setup
 for i, c in ipairs({ "black", "red", "green", "yellow", "blue", "purple", "cyan", "white" }) do
 	vim.g["terminal_color_" .. (i - 1)] = palette[c] or palette.fg
 end
