@@ -20,9 +20,7 @@ vim.opt.undofile = true
 vim.opt.showmode = false
 vim.opt.mouse = ""
 
--- set tab width
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+-- set tab style
 vim.opt.expandtab = true
 
 -- enable sign column & add guide after 100th column
