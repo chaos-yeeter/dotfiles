@@ -74,7 +74,7 @@ highlight(0, "@lsp.type.class", { fg = palette.orange })
 
 -- markdown URLs
 highlight(0, "@markup.link", { underline = false })
-highlight(0, "@markup.link.label", { fg = palette.fg })
+highlight(0, "@markup.link.label", { fg = palette.green })
 highlight(0, "@markup.link.url", { fg = palette.blue })
 
 -- terminal colour setup
