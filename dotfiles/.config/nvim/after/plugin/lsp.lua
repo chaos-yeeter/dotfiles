@@ -11,10 +11,6 @@ cmp.setup({
 			luasnip.lsp_expand(args.body)
 		end,
 	},
-	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
-	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-u>"] = cmp.mapping.scroll_docs(-4),
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
@@ -92,9 +88,5 @@ vim.keymap.set("n", "<leader>lR", vim.lsp.buf.rename, { desc = "rename symbol" }
 vim.keymap.set("n", "<leader>li", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "toggle inlay lsp hints" })
-vim.keymap.set("n", "K", function()
-	vim.lsp.buf.hover({ border = "rounded" })
-end, { desc = "show documentation" })
-vim.keymap.set({ "n", "i" }, "<C-s>", function()
-	vim.lsp.buf.signature_help({ border = "rounded" })
-end, { desc = "show function signature" })
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "show documentation" })
+vim.keymap.set({ "n", "i" }, "<C-s>", vim.lsp.buf.signature_help, { desc = "show function signature" })
