@@ -1,6 +1,7 @@
 update:
 	sudo pacman -Sy --needed archlinux-keyring
 	sudo pacman -Syu --needed \
+		man-db man-pages \
 		bash starship zoxide fzf \
 		neovim wl-clipboard xdg-utils ripgrep \
 		tmux \
