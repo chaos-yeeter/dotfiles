@@ -18,7 +18,7 @@ update:
 		gsettings-desktop-schemas \
 		nautilus gvfs gnome-disk-utility gnome-system-monitor eog \
 		papirus-icon-theme gnome-themes-extra \
-		qt5-wayland qt5ct \
+		qt5-wayland qt5ct qt6-wayland qt6ct \
 		pyenv \
 		ruff \
 		taplo \
@@ -36,7 +36,7 @@ update:
 		grimblast-git \
 		sql-formatter \
 		bibata-cursor-theme \
-		adwaita-qt-git
+		adwaita-qt5 adwaita-qt6
 
 	unused_packages="$(pacman -Qdtq)"
 	@if [[ -n "$$unused_packages" ]]; then \
