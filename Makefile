@@ -27,7 +27,8 @@ update:
 		vlc \
 		gimp \
 		obsidian \
-		kdenlive ffmpeg mlt
+		kdenlive ffmpeg mlt \
+		qbittorrent
 
 	yay -Sy --needed \
 		zen-browser-bin \
