@@ -22,12 +22,12 @@ cmp.setup({
 				cmp.confirm({ select = true })
 				return
 			end
-			if luasnip.expand_or_jumpable() then
+			if luasnip.expand_or_locally_jumpable() then
 				luasnip.expand_or_jump()
 			end
 		end, { "i", "s" }),
 		["<C-h>"] = cmp.mapping(function(_)
-			if luasnip.jumpable(-1) then
+			if luasnip.expand_or_locally_jumpable(-1) then
 				luasnip.jump(-1)
 			end
 		end, { "i", "s" }),
