@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # wait till hyprpaper starts
-while (hyprctl hyprpaper listloaded 2>&1 | grep -q "^Couldn't connect to"); do
+while [[ -z "$(pgrep hyprpaper | tr -d '[:space:]')" ]] || (hyprctl hyprpaper listloaded 2>&1 | grep -q "Couldn't connect to"); do
     echo "waiting for hyprpaper to start"
     sleep 1
 done
