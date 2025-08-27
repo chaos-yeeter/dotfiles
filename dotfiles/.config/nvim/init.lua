@@ -72,3 +72,7 @@ vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "copy to system clipbo
 -- miscellaneous
 vim.keymap.set("x", "p", '"_dP', { desc = "retain text when pasting over selection" })
 vim.keymap.set("n", "<leader>zz", ":tabnew %<CR><C-o>zz", { desc = "open current file in new tab" })
+
+-- remove unwanted keymaps
+vim.keymap.set({ "n", "x" }, "s", "<NOP>", { desc = "disable substitute" })
+vim.keymap.set({ "n", "x" }, "S", "<NOP>", { desc = "disable substitute" })
