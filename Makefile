@@ -24,6 +24,7 @@ update:
 		taplo \
 		lua-language-server stylua \
 		typescript-language-server tailwindcss-language-server yaml-language-server \
+		clang premake \
 		vlc \
 		gimp \
 		obsidian \
