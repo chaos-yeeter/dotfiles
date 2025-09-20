@@ -55,13 +55,8 @@ require("cmp_nvim_lsp").setup({
 	},
 })
 
--- ref: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-local lsp_config = require("lspconfig")
-lsp_config.basedpyright.setup({
-	capabilities = capabilities,
+-- ref: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+vim.lsp.config("basedpyright", {
 	settings = {
 		basedpyright = {
 			analysis = {
@@ -70,16 +65,21 @@ lsp_config.basedpyright.setup({
 		},
 	},
 })
-lsp_config.ruff.setup({ capabilities = capabilities })
-lsp_config.taplo.setup({ capabilities = capabilities })
-lsp_config.lua_ls.setup({ capabilities = capabilities })
-lsp_config.ts_ls.setup({ capabilities = capabilities })
-lsp_config.tailwindcss.setup({ capabilities = capabilities })
-lsp_config.yamlls.setup({ capabilities = capabilities })
-lsp_config.html.setup({ capabilities = capabilities })
-lsp_config.cssls.setup({ capabilities = capabilities })
-lsp_config.eslint.setup({ capabilities = capabilities })
-lsp_config.jsonls.setup({ capabilities = capabilities })
+
+vim.lsp.enable({
+	"lua_ls",
+	"taplo",
+	"ruff",
+	"basedpyright",
+	"ts_ls",
+	"tailwindcss",
+	"yamlls",
+	"html",
+	"cssls",
+	"jsonls",
+	"eslint",
+	"clangd",
+})
 
 -- setup keybindings
 vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { desc = "show code actions" })
