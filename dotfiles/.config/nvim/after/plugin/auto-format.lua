@@ -1,8 +1,8 @@
 local formatters_map = {
 	lua = "stylua FILEPATH",
 	python = "ruff check --no-cache --fix-only --select ALL FILEPATH && ruff format --silent FILEPATH",
-	c = "clang-format -i FILEPATH",
-	cpp = "clang-format -i FILEPATH",
+	c = "clang-tidy --fix -p ./build/ FILEPATH || true && clang-format -i FILEPATH",
+	cpp = "clang-tidy --fix -p ./build/ FILEPATH || true && clang-format -i FILEPATH",
 	sql = [[sql-formatter --fix --config '{"keywordCase": "upper"}' FILEPATH]],
 	typescript = "prettier --write FILEPATH",
 	typescriptreact = "prettier --write FILEPATH",
