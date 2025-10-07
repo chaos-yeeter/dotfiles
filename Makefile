@@ -29,7 +29,8 @@ update:
 		gimp \
 		obsidian \
 		kdenlive ffmpeg mlt \
-		qbittorrent
+		qbittorrent \
+		flatpak
 
 	yay -Sy --needed \
 		zen-browser-bin \
@@ -40,6 +41,8 @@ update:
 		bibata-cursor-theme \
 		adwaita-qt5 adwaita-qt6
 
+	flatpak remote-add --user --if-not-exists \
+		flathub https://flathub.org/repo/flathub.flatpakrepo
 	unused_packages="$(pacman -Qdtq)"
 	@if [[ -n "$$unused_packages" ]]; then \
 		sudo pacman -Rsup "$$unused_packages"; \
