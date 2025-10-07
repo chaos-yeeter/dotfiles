@@ -33,7 +33,6 @@ update:
 		flatpak
 
 	yay -Sy --needed \
-		zen-browser-bin \
 		basedpyright \
 		vscode-langservers-extracted \
 		grimblast-git \
@@ -43,6 +42,9 @@ update:
 
 	flatpak remote-add --user --if-not-exists \
 		flathub https://flathub.org/repo/flathub.flatpakrepo
+	flatpak install --or-update --user \
+		app.zen_browser.zen
+
 	unused_packages="$(pacman -Qdtq)"
 	@if [[ -n "$$unused_packages" ]]; then \
 		sudo pacman -Rsup "$$unused_packages"; \
