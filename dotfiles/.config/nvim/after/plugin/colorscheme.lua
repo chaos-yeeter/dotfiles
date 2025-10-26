@@ -45,6 +45,9 @@ highlight(0, "Delimiter", { fg = palette.fg })
 highlight(0, "Special", { fg = palette.cyan })
 highlight(0, "Underlined", { fg = palette.blue, underline = true })
 
+-- status line
+highlight(0, "StatusLineNC", { bg = "#121212" })
+
 -- LSP diagnostics
 highlight(0, "DiagnosticError", { fg = palette.red })
 highlight(0, "DiagnosticUnderlineError", { undercurl = true, sp = palette.red })
