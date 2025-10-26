@@ -48,12 +48,6 @@ vim.keymap.set("n", "<leader>c", ":silent bp | sp | bn | bd!<CR>", { desc = "clo
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "quit current window" })
 vim.keymap.set("n", "<leader>Q", ":qa<CR>", { desc = "quit neovim" })
 
--- window navigation
-vim.keymap.set("n", "<C-h>", ":wincmd h<CR>", { desc = "go to window to the left of current window" })
-vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { desc = "go to window below the current window" })
-vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { desc = "go to window above the current window" })
-vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { desc = "go to window to the right of current window" })
-
 -- split management
 vim.opt.splitbelow = true
 vim.opt.splitright = true
