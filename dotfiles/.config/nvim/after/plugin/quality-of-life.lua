@@ -31,3 +31,25 @@ vim.api.nvim_create_autocmd({ "TermClose" }, {
 	end,
 	group = autocmd_group,
 })
+
+-- maps
+vim.keymap.set({ "n", "i" }, "<C-[>", function()
+	-- normal escape
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
+
+	local window_ids = vim.api.nvim_tabpage_list_wins(0)
+	if #window_ids <= 1 then
+		return
+	end
+
+	for _, window_id in ipairs(window_ids) do
+		local success, window_config = pcall(vim.api.nvim_win_get_config, window_id)
+		if success and window_config.relative == "win" then
+			local filetype = vim.api.nvim_get_option_value("filetype", { buf = vim.api.nvim_win_get_buf(window_id) })
+			local buffer_name = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(window_id))
+			if #filetype == 0 or #buffer_name == 0 then
+				pcall(vim.api.nvim_win_close, window_id, true)
+			end
+		end
+	end
+end, { desc = "Ctrl+[ also closes all popups" })
