@@ -1,5 +1,5 @@
 local session_dir = vim.fn.expand("$HOME/.sessions/neovim/")
-local session_autocmd_group = vim.api.nvim_create_augroup("AutoSessionLoader", { clear = true })
+local session_autocmd_group = vim.api.nvim_create_augroup("session_manager", { clear = true })
 
 -- ref: https://neovim.io/doc/user/options.html#'sessionoptions'
 vim.opt.sessionoptions = "buffers,curdir,folds,resize,tabpages,winsize,options"
