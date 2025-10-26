@@ -21,3 +21,13 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TabEnter" }, {
 	command = "redrawstatus",
 	group = autocmd_group,
 })
+
+-- this is done to avoid double key press after closing terminal
+vim.api.nvim_create_autocmd({ "TermClose" }, {
+	pattern = "term://*",
+	desc = "skip 'Process exited...' screen after terminal closes",
+	callback = function()
+		vim.api.nvim_input("<CR>")
+	end,
+	group = autocmd_group,
+})
