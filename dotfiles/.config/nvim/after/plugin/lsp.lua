@@ -81,6 +81,22 @@ vim.lsp.enable({
 	"clangd",
 })
 
+-- diagnostic setup
+vim.diagnostic.config({
+	underline = {
+		severity = { vim.diagnostic.severity.ERROR },
+	},
+	severity_sort = true,
+	signs = {
+		text = {
+			[vim.diagnostic.severity.HINT] = "",
+			[vim.diagnostic.severity.INFO] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.ERROR] = "",
+		},
+	},
+})
+
 -- setup keybindings
 vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action, { desc = "show code actions" })
 vim.keymap.set("n", "<leader>lS", builtin.lsp_dynamic_workspace_symbols, { desc = "search workspace symbols" })
@@ -91,3 +107,4 @@ end, { desc = "toggle inlay lsp hints" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "show documentation" })
 vim.keymap.set({ "n", "i" }, "<C-s>", "<NOP>", { desc = "disable Ctrl+s mapping" })
 vim.keymap.set({ "n", "i" }, "<M-s>", vim.lsp.buf.signature_help, { desc = "show function signature" })
+vim.keymap.set({ "n", "i" }, "<M-d>", vim.diagnostic.open_float, { desc = "show diagnostic under cursor" })
