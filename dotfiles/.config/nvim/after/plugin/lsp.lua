@@ -3,6 +3,14 @@ local cmp = require("cmp")
 local luasnip = require("luasnip")
 
 cmp.setup({
+	window = {
+		completion = {
+			border = nil,
+		},
+		documentation = {
+			border = "rounded",
+		},
+	},
 	completion = {
 		completeopt = "menu,menuone,preview,noselect",
 	},
