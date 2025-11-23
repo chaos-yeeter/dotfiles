@@ -69,6 +69,26 @@ highlight(0, "TelescopePromptNormal", { fg = palette.white, bg = palette.black }
 highlight(0, "TelescopeResultsNormal", { fg = palette.white, bg = palette.black })
 highlight(0, "TelescopePreviewNormal", { fg = palette.white, bg = palette.black })
 
+-- todos
+highlight(0, "TodoBgTODO", { fg = palette.black, bg = palette.todo, bold = true })
+highlight(0, "TodoFgTODO", { fg = palette.todo, bold = false })
+highlight(0, "TodoSignTODO", { fg = palette.todo })
+highlight(0, "TodoBgINFO", { fg = palette.black, bg = palette.info, bold = true })
+highlight(0, "TodoFgINFO", { fg = palette.info, bold = false })
+highlight(0, "TodoSignINFO", { fg = palette.info })
+highlight(0, "TodoBgPERF", { fg = palette.black, bg = palette.optimization, bold = true })
+highlight(0, "TodoFgPERF", { fg = palette.optimization, bold = false })
+highlight(0, "TodoSignPERF", { fg = palette.optimization })
+highlight(0, "TodoBgHACK", { fg = palette.black, bg = palette.hack, bold = true })
+highlight(0, "TodoFgHACK", { fg = palette.hack, bold = false })
+highlight(0, "TodoSignHACK", { fg = palette.hack })
+highlight(0, "TodoBgWARN", { fg = palette.black, bg = palette.warning, bold = true })
+highlight(0, "TodoFgWARN", { fg = palette.warning, bold = false })
+highlight(0, "TodoSignWARN", { fg = palette.warning })
+highlight(0, "TodoBgFIX", { fg = palette.black, bg = palette.error, bold = true })
+highlight(0, "TodoFgFIX", { fg = palette.error, bold = false })
+highlight(0, "TodoSignFIX", { fg = palette.error })
+
 -- custom fixes
 -- constants
 highlight(0, "Constant", { fg = palette.blue })
