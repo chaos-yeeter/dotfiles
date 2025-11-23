@@ -91,9 +91,6 @@ vim.lsp.enable({
 
 -- diagnostic setup
 vim.diagnostic.config({
-	underline = {
-		severity = { vim.diagnostic.severity.ERROR },
-	},
 	severity_sort = true,
 	signs = {
 		text = {
