@@ -25,7 +25,7 @@ return {
 		},
 		{
 			"<leader>gd",
-			":Trouble diagnostics toggle filter.buf=0<cr>",
+			"<cmd>Trouble diagnostics toggle filter.buf=0 focus=true<cr>",
 			desc = "Buffer diagnostics",
 		},
 		{
