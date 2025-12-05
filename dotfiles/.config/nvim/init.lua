@@ -62,6 +62,7 @@ vim.keymap.set("n", "p", "pzz", { desc = "center search result when going backwa
 
 -- system clipboard integration
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "copy to system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "paste from system clipboard" })
 
 -- comment code
 vim.keymap.set("n", "<leader>/", "gcc", { remap = true, desc = "comment current line" })
