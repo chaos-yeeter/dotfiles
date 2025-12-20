@@ -32,7 +32,8 @@ update:
 		qbittorrent \
 		flatpak
 
-	yay -Sy --needed \
+	yay -Sy --needed --aur yay
+	yay -Sy --needed --aur \
 		basedpyright \
 		vscode-langservers-extracted \
 		grimblast-git \
