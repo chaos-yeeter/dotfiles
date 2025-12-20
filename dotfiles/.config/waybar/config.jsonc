@@ -38,7 +38,7 @@
         }
     },
     "idle_inhibitor": {
-        "format": " {icon} ",
+        "format": "{icon}",
         "format-icons": {
             "activated": "󰒳",
             "deactivated": "󰒲"
@@ -47,7 +47,6 @@
     },
     "wireplumber": {
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-click-right": "easyeffects",
         "on-scroll-up": "",
         "on-scroll-down": "",
         "format": "{icon}",
@@ -111,7 +110,7 @@
         }
     },
     "tray": {
-        "spacing": 3,
+        "spacing": 10,
         "icon-size": 24,
         "show-passive-items": true
     }
