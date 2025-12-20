@@ -118,8 +118,3 @@ highlight(0, "@lsp.type.class", { fg = palette.orange })
 highlight(0, "@markup.link", { underline = false })
 highlight(0, "@markup.link.label", { fg = palette.green })
 highlight(0, "@markup.link.url", { fg = palette.blue })
-
--- terminal colour setup
-for i, c in ipairs({ "black", "red", "green", "yellow", "blue", "purple", "cyan", "white" }) do
-	vim.g["terminal_color_" .. (i - 1)] = palette[c] or palette.white
-end
