@@ -11,7 +11,7 @@ update:
 		hyprland hyprlock hypridle hyprpaper xdg-desktop-portal-gtk \
 		waybar \
 		rofi-wayland dunst libnotify \
-		pipewire pipewire-pulse wireplumber easyeffects calf alsa-utils \
+		pipewire pipewire-pulse wireplumber calf alsa-utils \
 		brightnessctl playerctl \
 		network-manager-applet bluez blueman \
 		polkit polkit-gnome \
