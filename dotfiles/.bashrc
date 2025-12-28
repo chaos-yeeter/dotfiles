@@ -16,44 +16,71 @@ mkcd() {
 }
 
 tmuxer() {
-    # get currently running sessions
-    local sessions="$(tmux ls -F '#S' 2>/dev/null)"
-
-    # exlude active session
-    local active_session=""
-    if [[ -n "$TMUX" ]]; then
-        active_session="$(tmux display-message -p '#S' 2>/dev/null)"
-        sessions=$(printf "$sessions" | grep -v "^$active_session$")
-    fi
-
-    # show prompt to search sessions
-    local session_name=$(
-        printf "$sessions" \
-            | fzf --prompt "create/switch session> " --print-query \
-            | tail -n 1
+    local active_session_directory=$(
+        [[ -n "$TMUX" ]] && tmux display-message -t :0 -p '#{pane_current_path}' 2>/dev/null \
+        || printf ""
     )
 
-    # stop if session_name is empty or if active session is selected
-    if [[ -z "$session_name" ]] || [[ "$session_name" == "$active_session" ]]; then
+    # list all valid project & running session directories
+    local session_directories=$(tmux list-sessions -F '[#S] #{pane_current_path}' 2>/dev/null)
+    local project_directories="$(
+        find ~/projects/ \
+            -maxdepth 4 \
+            -type d \
+            -name '*pyproject.toml' \
+            -o -name '*Makefile' \
+            -o -name '*CMakeLists.txt' \
+        | xargs -n1 dirname \
+        | uniq
+    )"
+
+    local search_list=$(
+        awk '
+            FNR == NR {
+                key = $2
+                gsub(/[\[\]]/, "", key)
+                sessions[key] = $0
+                next
+            }
+
+            {
+                if ($0 in sessions) {
+                    print(sessions[$0])
+                    delete sessions[$0]
+                } else {
+                    print($0)
+                }
+            }
+
+            END {
+                for (session in sessions) {
+                    print(sessions[session])
+                }
+            }
+            ' <(echo "$session_directories") <(echo "$project_directories") \
+        | sort -u
+    )
+
+    if [[ -n "$active_session_directory" ]]; then
+        search_list=$(echo "$search_list" | grep -v "$active_session_directory")
+    fi
+
+    local selected_session_directory=$(
+        printf "$search_list" \
+        | fzf --prompt 'search project> ' --print-query \
+        | tail -n1
+    )
+    if [[ -z "$selected_session_directory" ]]; then
         return
     fi
 
-    # create new session when session_name is not one of existing sessions
-    if [[ -z $(printf "$sessions" | grep "^$session_name\$") ]]; then
-        tmux new -ds "$session_name"
-
-        # if a directory matches with session name, switch to it
-        if [[ -n "$(zoxide query "$session_name" 2>/dev/null)" ]]; then
-            tmux send-keys -t "$session_name:0" "j $session_name && clear"
-            tmux send-keys -t "$session_name:0" "Enter"
-        fi
-    fi
-
-    # switch session if inside tmux, otherwise attach to the session
-    if [[ -n "$active_session" ]]; then
-        tmux switch -t "$session_name"
+    # create session for selected directory & switch to it
+    local selected_session_name="$(basename $selected_session_directory | tr -d '[]')"
+    tmux new-session -d -s "$selected_session_name" -c "$selected_session_directory" 2>/dev/null
+    if [[ -n "$active_session_directory" ]]; then
+        tmux switch -t "$selected_session_name"
     else
-        tmux at -t "$session_name"
+        tmux attach -t "$selected_session_name"
     fi
 }
 
