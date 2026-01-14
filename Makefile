@@ -39,7 +39,8 @@ update:
 		grimblast-git \
 		sql-formatter \
 		bibata-cursor-theme \
-		adwaita-qt5 adwaita-qt6
+		adwaita-qt5 adwaita-qt6 \
+		visual-studio-code-bin
 
 	flatpak remote-add --user --if-not-exists \
 		flathub https://flathub.org/repo/flathub.flatpakrepo
