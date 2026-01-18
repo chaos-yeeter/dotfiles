@@ -16,7 +16,7 @@ update:
 		network-manager-applet bluez blueman \
 		polkit polkit-gnome \
 		gsettings-desktop-schemas \
-		nautilus gvfs gnome-disk-utility gnome-system-monitor eog \
+		nautilus gvfs gnome-disk-utility gnome-system-monitor eog gnome-calculator \
 		papirus-icon-theme gnome-themes-extra \
 		qt5-wayland qt5ct qt6-wayland qt6ct \
 		pyenv \
