@@ -12,21 +12,17 @@ tmuxer() {
             FNR == NR {
                 # remove leading [session] to get path instead of $2 to handle spaces in path
                 sessions[gensub(/^\[.*\][[:space:]]/, "", "g", $0)] = $0
+                print($0)
                 next
             }
 
             {
-                print(($0 in sessions) ? sessions[$0] : $0)
-                delete sessions[$0]
-            }
-
-            END {
-                for (session in sessions) {
-                    print(sessions[session])
+                if (!($0 in sessions)) {
+                    print($0)
                 }
             }
             ' \
-            <(tmux list-sessions -F '[#S] #{session_path}' 2>/dev/null) \
+            <(tmux list-sessions -F '[#S] #{session_path}' 2>/dev/null | sort) \
             <(
                 rg ~/projects/ \
                     --max-depth 4 \
@@ -34,8 +30,7 @@ tmuxer() {
                     --glob '*{pyproject.toml,Makefile,CMakeLists.txt}' \
                 | while read -r line; do dirname "$line"; done \
                 | sort -u
-            ) \
-        | sort -rk 2
+            )
     )
 
     if [[ -n "$active_session_directory" ]]; then
