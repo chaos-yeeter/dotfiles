@@ -69,6 +69,14 @@ vim.keymap.set("n", "<leader>/", "gcc", { remap = true, desc = "comment current 
 vim.keymap.set("x", "<leader>/", "gc", { remap = true, desc = "comment selection" })
 vim.keymap.set("n", "<leader>?", "gc", { remap = true, desc = "comment using motions" })
 
+-- add j/k movements with >1 distance to jumplist
+vim.keymap.set({ "n", "x" }, "j", function()
+	return vim.v.count > 1 and "m'" .. vim.v.count .. "j" or "j"
+end, { noremap = true, expr = true, desc = "add >1 j motion to jumplist" })
+vim.keymap.set({ "n", "x" }, "k", function()
+	return vim.v.count > 1 and "m'" .. vim.v.count .. "k" or "k"
+end, { noremap = true, expr = true, desc = "add >1 k motion to jumplist" })
+
 -- miscellaneous
 vim.keymap.set("x", "p", '"_dP', { desc = "retain text when pasting over selection" })
 vim.keymap.set("n", "<leader>zz", ":tabnew %<CR><C-o>zz", { desc = "open current file in new tab" })
