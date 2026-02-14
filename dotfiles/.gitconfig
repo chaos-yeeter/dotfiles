@@ -12,5 +12,5 @@
 	st = status
 	co = checkout
 	br = branch
-	hist = log --graph --pretty=format:'%Cred%h %C(yellow)%d %<(70,trunc)%Creset%s %Cgreen%ar %Cblue%an' --abbrev-commit
+	hist = log --pretty=format:'%C(auto)%h %C(auto)%d %<(80,trunc)%Creset%s %Cblue%<(15,trunc)%an %Cgreen%ar' --abbrev-commit
 	undo = reset --soft HEAD~
