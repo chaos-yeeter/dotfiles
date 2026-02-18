@@ -8,6 +8,6 @@ require("nvim-treesitter.configs").setup({
 	},
 	indent = {
 		enable = true,
-		disable = { "python", "toml", "sql", "css" },
+		disable = { "python", "toml", "sql", "css", "c", "cpp" },
 	},
 })
