@@ -10,6 +10,7 @@ export EDITOR="$(which nvim)"
 # setup tools
 eval "$(starship init bash)"
 eval "$(zoxide init bash --hook pwd --cmd j)"
+export PATH="$HOME/.local/bin/:$PATH" # setup for uv
 
 # make directory & cd into it
 mkcd() {

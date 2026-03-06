@@ -19,7 +19,7 @@ update:
 		nautilus gvfs gnome-disk-utility gnome-system-monitor eog gnome-calculator \
 		papirus-icon-theme gnome-themes-extra \
 		qt5-wayland qt5ct qt6-wayland qt6ct \
-		pyenv \
+		uv \
 		ruff \
 		taplo \
 		lua-language-server stylua \
