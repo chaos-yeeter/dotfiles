@@ -1,11 +1,13 @@
-[gpg]
-	format = ssh
+[init]
+	defaultBranch = main
 [user]
 	name = chaos-yeeter
 	email = kayasthamihir11@gmail.com
 	signingkey = ~/.ssh/github.pub
 [commit]
 	gpgSign = true
+[gpg]
+	format = ssh
 [gpg "ssh"]
 	allowedSignersFile = ~/.ssh/allowed_signers
 [alias]
