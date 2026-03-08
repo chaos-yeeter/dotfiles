@@ -30,7 +30,8 @@ update:
 		obsidian \
 		kdenlive ffmpeg mlt \
 		qbittorrent \
-		flatpak
+		flatpak \
+		superfile
 
 	yay -Sy --needed --aur yay
 	yay -Sy --needed --aur \

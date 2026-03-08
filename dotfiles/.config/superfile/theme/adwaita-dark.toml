@@ -1,0 +1,43 @@
+# syntax highlighting
+code_syntax_highlight = "dracula"
+
+# borders
+file_panel_border = "#3d3d3d"
+sidebar_border = "#1e1e1e"
+footer_border = "#3d3d3d"
+
+file_panel_border_active = "#3584e4"
+sidebar_border_active = "#3584e4"
+footer_border_active = "#3584e4"
+modal_border_active = "#3584e4"
+
+# borders
+file_panel_bg = "#1e1e1e"
+sidebar_bg = "#1e1e1e"
+footer_bg = "#1e1e1e"
+modal_bg = "#242424"
+
+# text colours
+text = "#eeeeee"
+text_secondary = "#c0c0c0"
+text_disabled = "#6c6c6c"
+
+# cursor & selection
+cursor = "#3584e4"
+selection_bg = "#264f78"
+selection_fg = "#ffffff"
+
+# file colours
+directory = "#62a0ea"
+symlink = "#33d17a"
+executable = "#57e389"
+archive = "#e5a50a"
+image = "#c061cb"
+video = "#ff7800"
+audio = "#f66151"
+
+# status & UI
+error = "#ff5555"
+warning = "#f6d32d"
+success = "#33d17a"
+info = "#3584e4"

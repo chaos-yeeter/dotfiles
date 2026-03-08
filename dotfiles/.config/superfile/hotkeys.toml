@@ -1,0 +1,57 @@
+# ref: https://superfile.dev/configure/custom-hotkeys/.
+confirm = ['enter', 'l']
+cd_quit = ['Q']
+quit = ['Q']
+
+list_down = ['j']
+list_up = ['k']
+page_down = ['ctrl+d']
+page_up = ['ctrl+u']
+
+close_file_panel = ['q']
+create_new_file_panel = ['n']
+previous_file_panel = ['ctrl+h']
+next_file_panel = ['ctrl+l']
+open_sort_options_menu = ['o']
+pinned_directory = ['P']
+toggle_file_preview_panel = ['f']
+toggle_reverse_sort = ['R']
+
+focus_on_metadata = ['ctrl+i']
+focus_on_process_bar = ['ctrl+p']
+focus_on_sidebar = ['ctrl+s']
+
+file_panel_item_create = ['a']
+file_panel_item_rename = ['r']
+
+copy_items = ['y']
+paste_items = ['p']
+cut_items = ['x']
+delete_items = ['d']
+permanently_delete_items = ['D']
+
+compress_file = ['ctrl+a']
+extract_file = ['ctrl+e']
+
+open_file_with_editor = ['e']
+open_current_directory_with_editor = ['E']
+
+change_panel_mode = ['V']
+copy_path = ['Y']
+copy_present_working_directory = ['c']
+open_command_line = [':']
+open_spf_prompt = ['>']
+open_help_menu = ['?']
+open_zoxide = ['z']
+toggle_dot_file = ['.']
+toggle_footer = ['ctrl+f']
+
+confirm_typing = ['enter']
+cancel_typing = ['esc']
+
+parent_directory = ['h', 'u']
+search_bar = ['/']
+
+file_panel_select_mode_items_select_down = ['J']
+file_panel_select_mode_items_select_up = [ 'K']
+file_panel_select_all_items = ['A']
