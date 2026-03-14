@@ -31,7 +31,7 @@ update:
 		kdenlive ffmpeg mlt \
 		qbittorrent \
 		flatpak \
-		superfile
+		yazi poppler fd resvg 7zip
 
 	yay -Sy --needed --aur yay
 	yay -Sy --needed --aur \
