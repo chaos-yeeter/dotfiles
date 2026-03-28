@@ -34,7 +34,7 @@ update:
 		yazi poppler fd resvg 7zip
 
 	yay -Sy --needed --aur yay
-	yay -Sy --needed --aur \
+	yay -Sy --clean --needed --aur --answerdiff ALL \
 		basedpyright \
 		vscode-langservers-extracted \
 		grimblast-git \
