@@ -24,7 +24,7 @@ function M.start()
 		return
 	end
 
-	vim.opt.sessionoptions = "buffers,curdir,options,resize,tabpages,winsize"
+	vim.opt.sessionoptions = "buffers,curdir,options,tabpages,winsize"
 
 	M._project = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 	if vim.fn.isdirectory(SESSION_DIRECTORY) == 0 then
