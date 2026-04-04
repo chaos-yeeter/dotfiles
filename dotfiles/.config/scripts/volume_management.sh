@@ -4,8 +4,25 @@ volume_limit="1.50" # 150%
 toggle_mute() {
     local action="${1:-toggle}"
     wpctl set-mute @DEFAULT_AUDIO_SINK@ "$action"
-    if [ "$action" == "1" ] || [ "$action" == "toggle" ]; then
-        dunstify --close "$volume_notification_id" &
+
+    if [[ -n "$1" ]]; then
+        # exit when called from increase_volume or decrease_volume
+        return
+    fi
+
+    if grep -qe '\[MUTED\]' <(wpctl get-volume @DEFAULT_AUDIO_SINK@); then
+        dunstify --replace "$volume_notification_id" "  Muted audio"
+    else
+        dunstify --replace "$volume_notification_id" "  Unmuted audio"
+    fi
+}
+
+toggle_mic_mute() {
+    wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+    if grep -qe '\[MUTED\]' <(wpctl get-volume @DEFAULT_AUDIO_SOURCE@); then
+        dunstify --replace "$volume_notification_id" "󰍭 Muted mic"
+    else
+        dunstify --replace "$volume_notification_id" "󰍬 Unmuted mic"
     fi
 }
 
