@@ -189,7 +189,7 @@ window-rule {
     max-height 600
 }
 
-spawn-sh-at-startup "GTK_THEME='Adwaita:dark' /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "hyprpaper"
 spawn-at-startup "hyprlock"
 spawn-at-startup "hypridle"
