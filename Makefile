@@ -8,7 +8,7 @@ update:
 		git gitui \
 		base-devel gcc make stow jq \
 		ttf-firacode-nerd noto-fonts noto-fonts-extra noto-fonts-emoji \
-		hyprland hyprlock hypridle hyprpaper xdg-desktop-portal-gtk \
+		niri hyprpaper hypridle hyprlock xdg-desktop-portal-gnome xdg-desktop-portal-gtk \
 		waybar \
 		rofi-wayland dunst libnotify \
 		pipewire pipewire-pulse wireplumber calf alsa-utils \

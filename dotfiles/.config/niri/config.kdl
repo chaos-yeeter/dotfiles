@@ -1,0 +1,202 @@
+workspace "browser"
+workspace "code"
+
+// ref: https://yalter.github.io/niri/Configuration:-Input
+input {
+    keyboard {
+        xkb {
+            options "altwin:swap_alt_win,ctrl:swapcaps"
+        }
+        numlock
+    }
+
+    touchpad {
+        tap
+        dwt // disable when typing
+        natural-scroll
+    }
+
+    mouse {
+    }
+
+    trackpoint {
+    }
+}
+
+animations {
+    off
+}
+
+// ref: https://yalter.github.io/niri/Configuration:-Layout
+layout {
+    gaps 0
+    center-focused-column "never"
+    default-column-width { proportion 1.0; }
+
+    preset-column-widths {
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+    }
+
+    preset-window-heights {
+        proportion 0.66667
+        proportion 1.0
+    }
+
+    focus-ring {
+        width 2
+        active-gradient from="#33ccffee" to="#00ff99ee" angle=45
+        inactive-color "#505050"
+    }
+
+    border {
+        off
+    }
+
+    shadow {}
+
+    struts {}
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 24
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+prefer-no-csd // disable client side decorations
+screenshot-path "~/Pictures/screenshots/%Y-%m-%d %H-%M-%S.png"
+
+binds {
+    Mod+Shift+Slash { show-hotkey-overlay; }
+
+    Mod+W hotkey-overlay-title="toggle waybar" repeat=false { spawn-sh "pkill waybar || waybar"; }
+    Mod+F hotkey-overlay-title="open application launcher" repeat=false { spawn-sh "rofi -show drun -show-icons"; }
+    Mod+E hotkey-overlay-title="open file explorer" repeat=false { spawn-sh "kitty --class 'yazi' 'yazi'"; }
+    Super+Alt+L hotkey-overlay-title="lock screen" repeat=false { spawn "hyprlock"; }
+
+    // volume controls
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "source ~/.config/scripts/volume_management.sh; increase_volume 5"; }
+    Shift+XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "source ~/.config/scripts/volume_management.sh; increase_volume 1"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "source ~/.config/scripts/volume_management.sh; decrease_volume 5"; }
+    Shift+XF86AudioLowerVolume allow-when-locked=true { spawn-sh "source ~/.config/scripts/volume_management.sh; decrease_volume 1"; }
+    XF86AudioMute allow-when-locked=true repeat=false { spawn-sh "source ~/.config/scripts/volume_management.sh; toggle_mute"; }
+    XF86AudioMicMute allow-when-locked=true repeat=false { spawn-sh "source ~/.config/scripts/volume_management.sh; toggle_mic_mute"; }
+
+    // media controls
+    XF86AudioPlay allow-when-locked=true repeat=false { spawn "playerctl" "play-pause"; }
+    XF86AudioStop allow-when-locked=true repeat=false { spawn "playerctl" "stop"; }
+    XF86AudioPrev allow-when-locked=true repeat=false { spawn "playerctl" "previous"; }
+    XF86AudioNext allow-when-locked=true repeat=false { spawn "playerctl" "next"; }
+
+    // brightness controls
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
+    Shift+XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+1%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
+    Shift+XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "1%-"; }
+
+    Mod+O repeat=false { toggle-overview; }
+    Mod+Q repeat=false { close-window; }
+
+    Mod+H repeat=false { focus-column-left; }
+    Mod+J repeat=false { focus-window-down; }
+    Mod+K repeat=false { focus-window-up; }
+    Mod+L repeat=false { focus-column-right; }
+
+    Mod+Ctrl+H repeat=false { move-column-left; }
+    Mod+Ctrl+J repeat=false { move-window-down; }
+    Mod+Ctrl+K repeat=false { move-window-up; }
+    Mod+Ctrl+L repeat=false { move-column-right; }
+
+    Mod+BracketLeft  repeat=false { consume-or-expel-window-left; }
+    Mod+BracketRight repeat=false { consume-or-expel-window-right; }
+
+    Mod+1 repeat=false { focus-workspace "browser"; }
+    Mod+2 repeat=false { focus-workspace "code"; }
+    Mod+3 repeat=false { focus-workspace 3; }
+    Mod+4 repeat=false { focus-workspace 4; }
+    Mod+Ctrl+1 repeat=false { move-column-to-workspace "browser"; }
+    Mod+Ctrl+2 repeat=false { move-column-to-workspace "code"; }
+    Mod+Ctrl+3 repeat=false { move-column-to-workspace 3; }
+    Mod+Ctrl+4 repeat=false { move-column-to-workspace 4; }
+
+    Mod+R repeat=false { switch-preset-column-width; }
+    Mod+Shift+R repeat=false { switch-preset-window-height; }
+    Mod+Ctrl+R repeat=false { reset-window-height; }
+    Mod+M repeat=false { fullscreen-window; }
+
+    Mod+Minus repeat=false { set-window-height "-10%"; }
+    Mod+Equal repeat=false { set-window-height "+10%"; }
+    Mod+Comma repeat=false { set-window-width "-10%"; }
+    Mod+Period repeat=false { set-window-width "+10%"; }
+
+    Mod+V repeat=false { toggle-window-floating; }
+    Mod+Shift+V repeat=false { switch-focus-between-floating-and-tiling; }
+
+    Mod+T repeat=false { toggle-column-tabbed-display; }
+
+    Print { screenshot; }
+    Alt+Print { screenshot-screen; }
+
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    Mod+Shift+E { quit; }
+}
+
+// window rules. ref: https://yalter.github.io/niri/Configuration:-Window-Rules
+// spawn startup apps on correct workspaces
+window-rule {
+    match app-id="app.zen_browser.zen" at-startup=true
+    open-on-workspace "browser"
+}
+
+window-rule {
+    match app-id="kitty" at-startup=true
+    open-on-workspace "code"
+}
+
+// float zen's picture-in-picture window
+window-rule {
+    match app-id="app.zen_browser.zen" title="Picture-in-Picture"
+    open-floating true
+}
+
+// float & center windows
+// NOTE: for some reason, some windows need to be resized once e.g. Mod+R for this to be applicable
+window-rule {
+    match app-id="yazi"
+    match app-id="blueman-manager"
+    match app-id="nm-connection-editor"
+    match title="Calculator"
+    match app-id="org.gnome.SystemMonitor"
+    match app-id="gnome-system-monitor"
+
+    open-focused true
+    open-floating true
+    min-width 1200
+    max-width 1200
+    min-height 600
+    max-height 600
+}
+
+spawn-sh-at-startup "GTK_THEME='Adwaita:dark' /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "hyprpaper"
+spawn-at-startup "hyprlock"
+spawn-at-startup "hypridle"
+spawn-at-startup "dunst"
+spawn-at-startup "blueman-applet"
+spawn-sh-at-startup "nm-applet --show-indicator"
+spawn-sh-at-startup "pkill -f battery_notifier || true && ~/.config/scripts/battery_notifier.sh"
+
+spawn-sh-at-startup "flatpak run 'app.zen_browser.zen'"
+spawn-at-startup "kitty"

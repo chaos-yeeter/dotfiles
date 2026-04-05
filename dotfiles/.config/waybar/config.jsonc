@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "modules-left": [
-        "hyprland/workspaces"
+        "niri/workspaces"
     ],
     "modules-center": [
         "clock"
@@ -12,11 +12,9 @@
         "battery",
         "tray"
     ],
-    "hyprland/workspaces": {
-        "format": "{name}",
-        "persistent_workspaces": {
-            "*": 4
-        }
+    "niri/workspaces": {
+        "disable-click": true,
+        "format": "{index}"
     },
     "clock": {
         "tooltip": true,
