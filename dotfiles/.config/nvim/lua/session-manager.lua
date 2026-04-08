@@ -8,10 +8,10 @@ function M._save_session()
 end
 
 function M.stop()
-	vim.api.nvim_del_augroup_by_name(AUTOCMD_GROUP)
+	pcall(vim.api.nvim_del_augroup_by_name, AUTOCMD_GROUP)
 
-	M._timer:stop()
-	M._timer:close()
+	pcall(M._timer.stop)
+	pcall(M._timer.close)
 
 	M._save_session()
 
