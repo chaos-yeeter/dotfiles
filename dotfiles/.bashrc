@@ -1,3 +1,8 @@
+# preserve multiline commands in history & reverse search
+shopt -s histappend cmdhist lithist
+HISTTIMEFORMAT='%F %T '
+PROMPT_COMMAND='history -a; history -r'
+
 # setup environment variables
 export LC_ALL=en_IN.UTF-8
 export LANG=en_IN.UTF-8
