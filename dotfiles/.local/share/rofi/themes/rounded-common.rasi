@@ -1,7 +1,7 @@
 /* ref: https://github.com/newmanls/rofi-themes-collection/blob/master/themes/rounded-common.rasi */
 
 * {
-    font:   "Roboto 12";
+    font:   "Inter 12";
 
     background-color:   transparent;
     text-color:         @fg0;

@@ -1,6 +1,7 @@
 # Ref: https://github.com/dunst-project/dunst/blob/master/dunstrc
 
 [global]
+    font = Inter 10
     monitor = 0
     follow = keyboard
     origin = top-right
@@ -28,7 +29,7 @@
     markup = yes
 
     # ref: https://docs.gtk.org/Pango/pango_markup.html#convenience-tags
-    format = "<big><b>%s</b></big>\n%b"
+    format = "<span weight='600'>%s</span>\n%b"
     alignment = left
     ellipsize = end
 

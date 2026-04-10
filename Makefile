@@ -7,7 +7,7 @@ update:
 		tmux \
 		git gitui \
 		base-devel gcc make stow jq \
-		ttf-firacode-nerd noto-fonts noto-fonts-extra noto-fonts-emoji \
+		ttf-jetbrains-mono inter-font ttf-nerd-fonts-symbols noto-fonts noto-fonts-extra noto-fonts-emoji \
 		niri hyprpaper hypridle hyprlock xdg-desktop-portal-gnome xdg-desktop-portal-gtk \
 		waybar \
 		rofi-wayland dunst libnotify \
