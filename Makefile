@@ -36,7 +36,6 @@ update:
 	yay -Sy --needed --aur yay
 	yay -Sy --clean --needed --aur --answerdiff ALL \
 		basedpyright \
-		grimblast-git \
 		sql-formatter \
 		bibata-cursor-theme \
 		adwaita-qt5 adwaita-qt6 \
