@@ -23,7 +23,7 @@ update:
 		ruff \
 		taplo \
 		lua-language-server stylua \
-		typescript-language-server tailwindcss-language-server yaml-language-server prettier \
+		prettier \
 		clang cmake ninja \
 		vlc \
 		gimp \
@@ -36,7 +36,6 @@ update:
 	yay -Sy --needed --aur yay
 	yay -Sy --clean --needed --aur --answerdiff ALL \
 		basedpyright \
-		vscode-langservers-extracted \
 		grimblast-git \
 		sql-formatter \
 		bibata-cursor-theme \

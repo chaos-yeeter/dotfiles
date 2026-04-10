@@ -79,13 +79,6 @@ vim.lsp.enable({
 	"taplo",
 	"ruff",
 	"basedpyright",
-	"ts_ls",
-	"tailwindcss",
-	"yamlls",
-	"html",
-	"cssls",
-	"jsonls",
-	"eslint",
 	"clangd",
 })
 
